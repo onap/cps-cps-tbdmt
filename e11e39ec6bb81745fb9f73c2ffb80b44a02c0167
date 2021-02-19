@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36570650_ffec4327",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-02-19T12:52:04Z",
+      "side": 1,
+      "message": "tbdmt",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 24
+      },
+      "revId": "e11e39ec6bb81745fb9f73c2ffb80b44a02c0167",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
