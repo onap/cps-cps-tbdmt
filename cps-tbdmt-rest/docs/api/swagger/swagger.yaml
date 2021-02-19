@@ -1,18 +1,16 @@
 swagger: "2.0"
 info:
-  description: ""
+  description: "APIS for Template based Data Model Transformer"
   version: "1.0.0"
   title: "Template based Data Model Transformer APIs"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 host: "localhost"
-basePath: "/v1"
 tags:
 - name: "templates"
   description: "CRUD APIs for xpath templates"
 schemes:
-- "https"
 - "http"
 paths:
   /templates:
@@ -20,7 +18,7 @@ paths:
       tags:
       - "templates"
       summary: "Add a new template"
-      description: ""
+      description: "Creates a template in the database"
       operationId: "addTemplate"
       consumes:
       - "application/json"
@@ -44,7 +42,7 @@ paths:
       tags:
       - "templates"
       summary: "Get all templates"
-      description: ""
+      description: "Retrieves all the templates stored in database"
       operationId: "getAllTemplates"
       consumes:
       - "application/json"
@@ -61,12 +59,12 @@ paths:
           description: "No templates found"
         "500":
           description: "Internal server error"
-  /templates/{schemaSet}/{id}:
+  /templates/{model}/{id}:
     get:
       tags:
       - "templates"
       summary: "Find template by ID"
-      description: "Returns a single template"
+      description: "Returns a single template identified by id"
       operationId: "getTemplateById"
       produces:
       - "application/json"
@@ -76,9 +74,9 @@ paths:
         description: "ID of template to return"
         required: true
         type: "string"
-      - name: "schemaSet"
+      - name: "model"
         in: "path"
-        description: "schema set"
+        description: "represents the yang model"
         required: true
         type: "string"
       responses:
@@ -94,7 +92,7 @@ paths:
       tags:
       - "templates"
       summary: "Deletes a template"
-      description: ""
+      description: "Deletes a template by id from the database"
       operationId: "deleteTemplate"
       produces:
       - "application/json"
@@ -103,9 +101,9 @@ paths:
         in: "path"
         required: true
         type: "string"
-      - name: "schemaSet"
+      - name: "model"
         in: "path"
-        description: "schema set"
+        description: "represents the yang model"
         required: true
         type: "string"
       responses:
@@ -115,7 +113,7 @@ paths:
           description: "Invalid ID supplied"
         "404":
           description: "Template not found"
-  /execute/{schemaSet}/{id}:
+  /execute/{model}/{id}:
     post:
       tags:
       - "template executions"
@@ -130,9 +128,9 @@ paths:
         description: "ID of template to execute"
         required: true
         type: "string"
-      - name: "schemaSet"
+      - name: "model"
         in: "path"
-        description: "schema set"
+        description: "represents the yang model"
         required: true
         type: "string"
       - in: "body"
@@ -157,12 +155,12 @@ definitions:
     type: "object"
     required:
     - "id"
-    - "schemaSet"
+    - "model"
     - "xpathTemplate"
     properties:
       id:
         type: "string"
-      schemaSet:
+      model:
         type: "string"
       xpathTemplate:
         type: "string"
