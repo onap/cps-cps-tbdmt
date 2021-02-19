@@ -10,7 +10,6 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.onap.cps</groupId>
     <artifactId>cps-tbdmt-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>

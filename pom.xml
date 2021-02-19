@@ -45,11 +45,11 @@
     </properties>
 
     <modules>
-        <module>cps-tbdmt-service</module>
-        <module>cps-tbdmt-rest</module>
         <module>cps-tbdmt-dependencies</module>
         <module>cps-tbdmt-bom</module>
         <module>cps-tbdmt-parent</module>
+        <module>cps-tbdmt-service</module>
+        <module>cps-tbdmt-rest</module>
         <module>cps-tbdmt-application</module>
     </modules>
 
