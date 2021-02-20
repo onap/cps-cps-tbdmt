@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c2ea10c4_9327f08f",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-02-20T18:54:40Z",
+      "side": 1,
+      "message": "this indeed is o-parent. I forgot to update it. luckily we have the reviews. Anyway let me move you concerns where it belongs, lets have the conversation there",
+      "parentUuid": "39b8a0f0_dc3d6f79",
+      "range": {
+        "startLine": 25,
+        "startChar": 20,
+        "endLine": 25,
+        "endChar": 30
+      },
+      "revId": "6888e18d541411c113abb121d98c17f11e825c84",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e363d107_87d4cd45",
         "filename": "pom.xml",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2021-02-19T17:13:02Z",
       "side": 1,
       "message": "tbdmt\n\nI think you forgot you own only updates :-D",
+      "range": {
+        "startLine": 30,
+        "startChar": 19,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "6888e18d541411c113abb121d98c17f11e825c84",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7400d20f_92df6c85",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-02-20T18:54:40Z",
+      "side": 1,
+      "message": "arghhh 😂",
+      "parentUuid": "e363d107_87d4cd45",
       "range": {
         "startLine": 30,
         "startChar": 19,

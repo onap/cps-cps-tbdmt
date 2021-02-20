@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb3fa875_06902569",
+        "filename": "cps-tdmt-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-02-20T18:54:40Z",
+      "side": 1,
+      "message": "so, the question was wheter to user cps parent or not. If we use it we get out of the box all the configuration, plugins checks done for CPS. \nIf we dont use it, then the project can consume o-parent. Which may differs what we use / do. E.g. check style, test coverage enforcement...\n\nAt any rate, if no blocker review received. We should merge this commit, and introduce the change later if we decide to take different approach. So Krishna can have at least the structure of the project merged, and can introduce the code changes required in parallel",
+      "range": {
+        "startLine": 8,
+        "startChar": 20,
+        "endLine": 8,
+        "endChar": 30
+      },
+      "revId": "656c4e184e414b439f759a032f7adc8f4192820e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
