@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49e6b778_99da3305",
+        "filename": "cps-tbdmt-dependencies/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "consider alphabetical property list for versions",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 41
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e572fe54_88e028b1",
+        "filename": "cps-tbdmt-service/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "arre all the dependencies really used?",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7235b328_9b90f727",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/client/CpsRestClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "use constant with good name",
+      "range": {
+        "startLine": 54,
+        "startChar": 41,
+        "endLine": 54,
+        "endChar": 74
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59625e1c_9b02bdaa",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/exception/CpsException.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "CPOS itself also defines org.onap.cps.spi.exceptions.CpsException\neither used that or define your own exception with different name to avoid confusion",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 26
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd5e1036_874c0596",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/exception/RecordNotFoundException.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "not sure if I would use this term, probably depend on where you used this exception though",
+      "range": {
+        "startLine": 27,
+        "startChar": 13,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43598a96_b2df9266",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/exception/TemplateExceptionHandler.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "Maybe TemplateNotFoudnException ?",
+      "range": {
+        "startLine": 46,
+        "startChar": 22,
+        "endLine": 46,
+        "endChar": 28
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae72e94f_debc1220",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/exception/TemplateExceptionHandler.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:00:14Z",
+      "side": 1,
+      "message": "for clarity I would us the full name of the exception in each method",
+      "range": {
+        "startLine": 47,
+        "startChar": 102,
+        "endLine": 47,
+        "endChar": 104
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
