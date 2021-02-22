@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "21e3ecd0_05e70136",
+        "filename": "cps-tbdmt-service/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-22T10:56:00Z",
+      "side": 1,
+      "message": "We are using jinja for xpath templates. So this library is needed",
+      "parentUuid": "e572fe54_88e028b1",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7235b328_9b90f727",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/client/CpsRestClient.java",
         "patchSetId": 4
@@ -243,6 +267,30 @@
       "writtenOn": "2021-02-22T10:33:16Z",
       "side": 1,
       "message": "this is my biggest issue really. I am not sure why use use a  schemaSet in the call hierarchy.\nIt would mean that a template can only operate with one schemaSet. I the schemaSet concept is the same as in CPS (and I assume it is) that is incorrect! your very first AP call we discussed #1 in https://wiki.onap.org/display/DW/CPS+APIs already needs data from 2 schema sets? Maybe it is good enough for the POC but I think it needs a bit more discussion...",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 46
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c66dbc00_3b1baffd",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/TemplateController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-22T10:56:00Z",
+      "side": 1,
+      "message": "Yes Toine. A single api in config db can correspond to the multiple xpath queries to different schemas. We need further discussions on how to handle it here in this service. \n\nWhen the template that we store in the templates table is going to be an xpath template, it directly maps to a schema set. I see this table to be the foundational one and when we need multiple queries across different yang models, it is matter of concatenating different queries from this table",
+      "parentUuid": "e974cc11_0251668c",
       "range": {
         "startLine": 73,
         "startChar": 35,
