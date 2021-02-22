@@ -46,6 +46,99 @@
       "revId": "3df9a3750168747014a49013199898d0a6f0335e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48a6fd24_5edc7748",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-22T16:17:35Z",
+      "side": 1,
+      "message": "Please link the other ticket.\nDon\u0027t have +2.",
+      "parentUuid": "26cc6f33_896f9546",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "3df9a3750168747014a49013199898d0a6f0335e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ff0b709_15f72149",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-22T16:17:35Z",
+      "side": 1,
+      "message": "Unrelated Question: Have we decided a context path for application yet? like tbdmt ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "3df9a3750168747014a49013199898d0a6f0335e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "740d7985_81024cf0",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-22T16:17:35Z",
+      "side": 1,
+      "message": "supported yet?",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "3df9a3750168747014a49013199898d0a6f0335e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12fc824f_705fdd79",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-22T16:17:35Z",
+      "side": 1,
+      "message": "would be good to have a single liner",
+      "range": {
+        "startLine": 23,
+        "startChar": 19,
+        "endLine": 23,
+        "endChar": 21
+      },
+      "revId": "3df9a3750168747014a49013199898d0a6f0335e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
