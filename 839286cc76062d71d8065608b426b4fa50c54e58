@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "30c7a92f_0775198c",
+        "filename": "cps-tbdmt-application/src/main/java/org/onap/cps/tdmt/Application.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-22T13:16:14Z",
+      "side": 1,
+      "message": "I will rename the package. That should solve it",
+      "parentUuid": "e7a6040f_1df83cd3",
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49e6b778_99da3305",
         "filename": "cps-tbdmt-dependencies/pom.xml",
         "patchSetId": 4
@@ -332,6 +350,30 @@
       "side": 1,
       "message": "Hi Krishna,\n\nCan you explain in moe detail what you mean with a \u0027schema Set\u0027 in the context of DBTMT. maybe you have a wiki where it is/can be explained more clearly?",
       "parentUuid": "c66dbc00_3b1baffd",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 46
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eeefc676_05db586e",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/TemplateController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-22T13:16:14Z",
+      "side": 1,
+      "message": "It is a single yang model on which the xpath query is compatible with. This will be directly mapped to the nf descriptor. With this, TBDMT can query the AAI for the nf instances which I beleive is mapped to the anchor which can be used to query the cps",
+      "parentUuid": "3bbc2c90_2972ca45",
       "range": {
         "startLine": 73,
         "startChar": 35,
