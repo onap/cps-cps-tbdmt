@@ -22,6 +22,30 @@
       "revId": "3df9a3750168747014a49013199898d0a6f0335e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26cc6f33_896f9546",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-02-22T13:03:55Z",
+      "side": 1,
+      "message": "- Krishna please provide fix on other commit. \n- Rishi can you check if you can do +2?  after add the +1?  \n  Otherwise we will need a LF ticket again 😞",
+      "parentUuid": "46677037_1a9401bc",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "3df9a3750168747014a49013199898d0a6f0335e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
