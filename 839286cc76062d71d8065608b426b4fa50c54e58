@@ -160,6 +160,236 @@
       "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6c0534c_455a0bcf",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/model/TemplateId.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "bit confused with the naming (what is what), maybe it wil make more sense later..",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 28
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a5a38ba_ebe999d2",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/ExecutionController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "is this the id for a template?  (if so call it emplateId)",
+      "range": {
+        "startLine": 43,
+        "startChar": 42,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a024ccf0_8f0a2ce4",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/ExecutionController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "executionRequest",
+      "range": {
+        "startLine": 44,
+        "startChar": 51,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e974cc11_0251668c",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/TemplateController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "this is my biggest issue really. I am not sure why use use a  schemaSet in the call hierarchy.\nIt would mean that a template can only operate with one schemaSet. I the schemaSet concept is the same as in CPS (and I assume it is) that is incorrect! your very first AP call we discussed #1 in https://wiki.onap.org/display/DW/CPS+APIs already needs data from 2 schema sets? Maybe it is good enough for the POC but I think it needs a bit more discussion...",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 46
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f90e056_67a957cc",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "executionRequest",
+      "range": {
+        "startLine": 57,
+        "startChar": 98,
+        "endLine": 57,
+        "endChar": 105
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33f7b970_005aed17",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "optionals and naming are a bit tricky but I do prefer to use optional in the name especially when there are other sections of code were teh object is used on its own:\n\noptionalTemplate or templateOptional",
+      "range": {
+        "startLine": 59,
+        "startChar": 33,
+        "endLine": 59,
+        "endChar": 42
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae1f210f_fa1315c6",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "no need for else block",
+      "range": {
+        "startLine": 62,
+        "startChar": 3,
+        "endLine": 62,
+        "endChar": 16
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "819f4ce4_9b9a1eaf",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/TemplateBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "is order relevant? Don\u0027t think so\nAlways used most generic interface possible eg. Collection\n(probably instantiate as a set)",
+      "range": {
+        "startLine": 58,
+        "startChar": 11,
+        "endLine": 58,
+        "endChar": 15
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e869310c_26c1d271",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/TemplateBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "schema not reelvant?!\n\ninclude the actual id in the error message",
+      "range": {
+        "startLine": 75,
+        "startChar": 83,
+        "endLine": 75,
+        "endChar": 89
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afab894a_d4943fa4",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/service/TemplateBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T10:33:16Z",
+      "side": 1,
+      "message": "include the actual id in the error message",
+      "range": {
+        "startLine": 89,
+        "startChar": 71,
+        "endLine": 89,
+        "endChar": 73
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
