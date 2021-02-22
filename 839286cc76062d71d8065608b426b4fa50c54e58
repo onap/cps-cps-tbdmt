@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "e7a6040f_1df83cd3",
+        "filename": "cps-tbdmt-application/src/main/java/org/onap/cps/tdmt/Application.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T12:54:43Z",
+      "side": 1,
+      "message": "please note the containing foldername is still cps/tdmt instead of cps/tbdmt ?!",
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49e6b778_99da3305",
         "filename": "cps-tbdmt-dependencies/pom.xml",
         "patchSetId": 4
@@ -291,6 +308,30 @@
       "side": 1,
       "message": "Yes Toine. A single api in config db can correspond to the multiple xpath queries to different schemas. We need further discussions on how to handle it here in this service. \n\nWhen the template that we store in the templates table is going to be an xpath template, it directly maps to a schema set. I see this table to be the foundational one and when we need multiple queries across different yang models, it is matter of concatenating different queries from this table",
       "parentUuid": "e974cc11_0251668c",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 46
+      },
+      "revId": "839286cc76062d71d8065608b426b4fa50c54e58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bbc2c90_2972ca45",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tdmt/rest/TemplateController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-22T12:54:43Z",
+      "side": 1,
+      "message": "Hi Krishna,\n\nCan you explain in moe detail what you mean with a \u0027schema Set\u0027 in the context of DBTMT. maybe you have a wiki where it is/can be explained more clearly?",
+      "parentUuid": "c66dbc00_3b1baffd",
       "range": {
         "startLine": 73,
         "startChar": 35,
