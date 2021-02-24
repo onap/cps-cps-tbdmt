@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a512395_f844c18a",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-24T17:11:07Z",
+      "side": 1,
+      "message": "by model and id ?",
+      "range": {
+        "startLine": 67,
+        "startChar": 57,
+        "endLine": 67,
+        "endChar": 62
+      },
+      "revId": "8108439fdbd1c0b929b3d7a62973f2a72e01f5db",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "831a2335_7eee0bce",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/TemplateId.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-24T17:11:07Z",
+      "side": 1,
+      "message": "is still think this should be templateId\nnot sure if having a compound class helps in this case I think it causes confusion\n\nI probably keep using modelName and templateId (what you now call id) as separate entities wherever we need them\n\nin CPS Core we have 3 main IDs : dataspaca, schemaSet and Anchor and like the we keep them separate we have no compound classes representing 2 or 3 ids...",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 21
+      },
+      "revId": "8108439fdbd1c0b929b3d7a62973f2a72e01f5db",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
