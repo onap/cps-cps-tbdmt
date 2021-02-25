@@ -209,6 +209,23 @@
     },
     {
       "key": {
+        "uuid": "e46f37de_119d25ff",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-25T17:28:34Z",
+      "side": 1,
+      "message": "I just ran tets locally 95% code coverage so that is great :-)",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "15398879_54f473f0",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/TemplateBusinessLogicTest.java",
         "patchSetId": 7
