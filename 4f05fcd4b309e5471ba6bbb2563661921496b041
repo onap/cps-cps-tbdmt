@@ -2,6 +2,167 @@
   "comments": [
     {
       "key": {
+        "uuid": "266ab0f2_e0c75982",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "This seems like this is for schema generation. This is default and schema.sql on resources is auto picked up. Remove if possible.",
+      "range": {
+        "startLine": 26,
+        "startChar": 12,
+        "endLine": 26,
+        "endChar": 33
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65668616_4db7cce2",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "Suggestion : cps_template_db",
+      "range": {
+        "startLine": 27,
+        "startChar": 42,
+        "endLine": 27,
+        "endChar": 53
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e491ffc_d33b90c3",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "Looks like this is specific for version 9. org.hibernate.dialect.PostgreSQLDialect works",
+      "range": {
+        "startLine": 38,
+        "startChar": 23,
+        "endLine": 38,
+        "endChar": 63
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aad72afe_dd270222",
+        "filename": "cps-tbdmt-dependencies/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "for Cps core we follow convention of alphabetic order.",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 55
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70b4f483_97ff54e7",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "template-id. Same pattern for others",
+      "range": {
+        "startLine": 126,
+        "startChar": 15,
+        "endLine": 126,
+        "endChar": 25
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baae1207_a5569224",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "have a feeling this and other files are not using Onap code formatter.",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 80,
+        "endChar": 5
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65f2df1c_a22ef2a6",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/exception/CpsClientException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "Declare serialVersionUID ?",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 31
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f8043870_528c3801",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/TemplateKey.java",
         "patchSetId": 7
@@ -25,6 +186,29 @@
     },
     {
       "key": {
+        "uuid": "16d63476_89de21f8",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "missing param",
+      "range": {
+        "startLine": 53,
+        "startChar": 7,
+        "endLine": 54,
+        "endChar": 19
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "15398879_54f473f0",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/TemplateBusinessLogicTest.java",
         "patchSetId": 7
@@ -36,6 +220,52 @@
       "writtenOn": "2021-02-25T12:19:34Z",
       "side": 1,
       "message": "depending on the future direction of the is tool we might want to introduce the same testing framework (Spock \u0026 Groovy)  as used in CPS core and NF Proxy but for now these tests are OK",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f9c8d1f_d0d9420b",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "org.hibernate.dialect.PostgreSQLDialect is what CPS uses",
+      "range": {
+        "startLine": 37,
+        "startChar": 23,
+        "endLine": 37,
+        "endChar": 63
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "854bf021_317f36fa",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-02-25T16:15:36Z",
+      "side": 1,
+      "message": "postgres:12.4-alpine would be better, to be in inline with cps core",
+      "range": {
+        "startLine": 26,
+        "startChar": 11,
+        "endLine": 26,
+        "endChar": 30
+      },
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
