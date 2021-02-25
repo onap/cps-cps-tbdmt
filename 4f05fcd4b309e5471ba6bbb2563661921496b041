@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8043870_528c3801",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/TemplateKey.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-25T12:19:34Z",
+      "side": 1,
+      "message": "does the order of these properties affect the auto generated constructor, I noticed the constructor passed templateID first. Since model is higher up the hierarchy I would prefer this to be the first argument but this is only a very minor comment....",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15398879_54f473f0",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/TemplateBusinessLogicTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-25T12:19:34Z",
+      "side": 1,
+      "message": "depending on the future direction of the is tool we might want to introduce the same testing framework (Spock \u0026 Groovy)  as used in CPS core and NF Proxy but for now these tests are OK",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
