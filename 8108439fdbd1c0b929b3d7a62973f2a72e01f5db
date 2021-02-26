@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5d9daffb_da9525ed",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a512395_f844c18a",
+      "range": {
+        "startLine": 67,
+        "startChar": 57,
+        "endLine": 67,
+        "endChar": 62
+      },
+      "revId": "8108439fdbd1c0b929b3d7a62973f2a72e01f5db",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "831a2335_7eee0bce",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/TemplateId.java",
         "patchSetId": 5

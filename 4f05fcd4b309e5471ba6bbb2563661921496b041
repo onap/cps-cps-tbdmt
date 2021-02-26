@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c899b085_c0fab518",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "I think this is a copy of what we have in the docker-compose. I will remove this one. It is not needed here",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "266ab0f2_e0c75982",
         "filename": "cps-tbdmt-application/src/main/resources/application.yml",
         "patchSetId": 7
@@ -22,6 +39,30 @@
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3d1eb6c_290a33ba",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "266ab0f2_e0c75982",
+      "range": {
+        "startLine": 26,
+        "startChar": 12,
+        "endLine": 26,
+        "endChar": 33
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -48,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "ebe31b48_d93ffdb9",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65668616_4db7cce2",
+      "range": {
+        "startLine": 27,
+        "startChar": 42,
+        "endLine": 27,
+        "endChar": 53
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e491ffc_d33b90c3",
         "filename": "cps-tbdmt-application/src/main/resources/application.yml",
         "patchSetId": 7
@@ -68,6 +133,30 @@
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37f1a861_94730787",
+        "filename": "cps-tbdmt-application/src/main/resources/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e491ffc_d33b90c3",
+      "range": {
+        "startLine": 38,
+        "startChar": 23,
+        "endLine": 38,
+        "endChar": 63
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +183,30 @@
     },
     {
       "key": {
+        "uuid": "ee32563d_6714fbeb",
+        "filename": "cps-tbdmt-dependencies/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "It seems I arranged only the versions based on alphabetic order. I will handle it",
+      "parentUuid": "aad72afe_dd270222",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 55
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "70b4f483_97ff54e7",
         "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
         "patchSetId": 7
@@ -114,6 +227,30 @@
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08a05735_63a74604",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70b4f483_97ff54e7",
+      "range": {
+        "startLine": 126,
+        "startChar": 15,
+        "endLine": 126,
+        "endChar": 25
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +288,30 @@
       "writtenOn": "2021-02-25T16:15:36Z",
       "side": 1,
       "message": "Declare serialVersionUID ?",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 31
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a80095a_f8fa1fc6",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/exception/CpsClientException.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Should I? I thought they are only for the classes implementing Serializable",
+      "parentUuid": "65f2df1c_a22ef2a6",
       "range": {
         "startLine": 23,
         "startChar": 13,
@@ -209,6 +370,30 @@
     },
     {
       "key": {
+        "uuid": "3558142e_292b54d7",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16d63476_89de21f8",
+      "range": {
+        "startLine": 53,
+        "startChar": 7,
+        "endLine": 54,
+        "endChar": 19
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e46f37de_119d25ff",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
         "patchSetId": 7
@@ -226,6 +411,24 @@
     },
     {
       "key": {
+        "uuid": "d8697c56_fb57d64a",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e46f37de_119d25ff",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "15398879_54f473f0",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/TemplateBusinessLogicTest.java",
         "patchSetId": 7
@@ -240,6 +443,24 @@
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2ffdcd5_488d8e3f",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/TemplateBusinessLogicTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "15398879_54f473f0",
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -266,6 +487,30 @@
     },
     {
       "key": {
+        "uuid": "c9da3c2d_892f39f8",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f9c8d1f_d0d9420b",
+      "range": {
+        "startLine": 37,
+        "startChar": 23,
+        "endLine": 37,
+        "endChar": 63
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "854bf021_317f36fa",
         "filename": "docker-compose/docker-compose.yml",
         "patchSetId": 7
@@ -286,6 +531,30 @@
       "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ede6c0c_837179c0",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-02-26T06:40:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "854bf021_317f36fa",
+      "range": {
+        "startLine": 26,
+        "startChar": 11,
+        "endLine": 26,
+        "endChar": 30
+      },
+      "revId": "4f05fcd4b309e5471ba6bbb2563661921496b041",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
