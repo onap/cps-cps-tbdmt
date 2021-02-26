@@ -1,0 +1,176 @@
+swagger: "2.0"
+info:
+  description: "APIS for Template based Data Model Transformer"
+  version: "1.0.0"
+  title: "Template based Data Model Transformer APIs"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost"
+tags:
+- name: "templates"
+  description: "CRUD APIs for xpath templates"
+schemes:
+- "http"
+paths:
+  /templates:
+    post:
+      tags:
+      - "templates"
+      summary: "Add a new template"
+      description: "Creates a template in the database"
+      operationId: "addTemplate"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Template object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Template"
+      responses:
+        "201":
+          description: "Created successfully"
+        "400":
+          description: "Invalid input"
+        "500":
+          description: "Internal server error"
+    get:
+      tags:
+      - "templates"
+      summary: "Get all templates"
+      description: "Retrieves all the templates stored in database"
+      operationId: "getAllTemplates"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Templates returned successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Template"
+        "404":
+          description: "No templates found"
+        "500":
+          description: "Internal server error"
+  /templates/{model}/{template-id}:
+    get:
+      tags:
+      - "templates"
+      summary: "Find template by ID and model"
+      description: "Returns a single template identified by template-id and model"
+      operationId: "getTemplateById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "template-id"
+        in: "path"
+        description: "ID of template to return"
+        required: true
+        type: "string"
+      - name: "model"
+        in: "path"
+        description: "represents the yang model"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Template returned successfully"
+          schema:
+            $ref: "#/definitions/Template"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Not found"
+    delete:
+      tags:
+      - "templates"
+      summary: "Deletes a template"
+      description: "Deletes a template by id and model from the database"
+      operationId: "deleteTemplate"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "template-id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "model"
+        in: "path"
+        description: "represents the yang model"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Deleted successfully"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Template not found"
+  /execute/{model}/{template-id}:
+    post:
+      tags:
+      - "template executions"
+      summary: "Execute a template"
+      description: "Returns the result of execution"
+      operationId: "executeTemplateById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "template-id"
+        in: "path"
+        description: "ID of template to execute"
+        required: true
+        type: "string"
+      - name: "model"
+        in: "path"
+        description: "represents the yang model"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Template object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/ApiRequest"
+      responses:
+        "200":
+          description: "Result returned successfully"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Not found"
+        "500":
+          description: "Internal server error"
+definitions:
+  Template:
+    type: "object"
+    required:
+    - "template-id"
+    - "model"
+    - "xpath-template"
+    properties:
+      template-id:
+        type: "string"
+      model:
+        type: "string"
+      xpath-template:
+        type: "string"
+  ApiRequest:
+    type: "object"
+    properties:
+      input:
+        type: "object"
+  ApiResponse:
+    type: "object"
+externalDocs:
+  description: "Find out more about APIs"
+  url: "https://wiki.onap.org/display/DW/API+Mapper+Service"
