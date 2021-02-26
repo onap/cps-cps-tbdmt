@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "958ebbf4_8740dc67",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:21:47Z",
+      "side": 1,
+      "message": "templateRequest",
+      "range": {
+        "startLine": 47,
+        "startChar": 93,
+        "endLine": 47,
+        "endChar": 100
+      },
+      "revId": "fcce238acd68c167c2a78d242c032613a98ebf28",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d58cbc31_65f6f3b9",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/ExecutionControllerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:21:47Z",
+      "side": 1,
+      "message": "Suggestion: inputParameters, requestParameters",
+      "range": {
+        "startLine": 68,
+        "startChar": 34,
+        "endLine": 68,
+        "endChar": 40
+      },
+      "revId": "fcce238acd68c167c2a78d242c032613a98ebf28",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2cf6fad_342c5261",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/ExecutionControllerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:21:47Z",
+      "side": 1,
+      "message": "try not to combine multiple test into one...",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 48
+      },
+      "revId": "fcce238acd68c167c2a78d242c032613a98ebf28",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7542432_188fc52e",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/TemplateControllerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:21:47Z",
+      "side": 1,
+      "message": "in general try t avoid shortening class names (it leas to inconsistencies and possible confusion). Your ide will suggest objectMapper too, just follow that :-)",
+      "range": {
+        "startLine": 58,
+        "startChar": 25,
+        "endLine": 58,
+        "endChar": 31
+      },
+      "revId": "fcce238acd68c167c2a78d242c032613a98ebf28",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
