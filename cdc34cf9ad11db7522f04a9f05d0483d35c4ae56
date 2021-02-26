@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48c63091_f33de95f",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "depending on the situation this can be different. Template will need to know if it is a get (fully qualified xpath) or q query: partial xpath and/or condition on non-key leaves!\n\nget: xpath \nquery : cps-path",
+      "range": {
+        "startLine": 38,
+        "startChar": 70,
+        "endLine": 38,
+        "endChar": 74
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c38719b7_82d942f1",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/AppConfiguration.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "should immutable patten be used?",
+      "range": {
+        "startLine": 40,
+        "startChar": 12,
+        "endLine": 40,
+        "endChar": 47
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f268fa10_7328dd11",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/ExecutionRequest.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "as before use better name",
+      "range": {
+        "startLine": 35,
+        "startChar": 32,
+        "endLine": 35,
+        "endChar": 37
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7acf9b74_7ca59e45",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/ExecutionResponse.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "more descriptive name maybe?",
+      "range": {
+        "startLine": 34,
+        "startChar": 19,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74dbb94b_16227765",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "not familiar what JinJa does, I can guess but it might be good to extrac a method to make it more clear\n\nsomething like\n\n\n\nString genarateXpath( String template, final Map tempateParameters)",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 78
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f009808_54ac9ab4",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-02-26T09:55:32Z",
+      "side": 1,
+      "message": "this is so much easier in Spock :-)",
+      "range": {
+        "startLine": 77,
+        "startChar": 2,
+        "endLine": 81,
+        "endChar": 34
+      },
+      "revId": "cdc34cf9ad11db7522f04a9f05d0483d35c4ae56",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
