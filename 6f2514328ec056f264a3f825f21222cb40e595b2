@@ -45,6 +45,30 @@
       "revId": "6f2514328ec056f264a3f825f21222cb40e595b2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f19cc7a_26769839",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-03-01T07:39:32Z",
+      "side": 1,
+      "message": "It is an alpine based java image provided by the onap\u0027s integration team. They suggests to use this to avoid any license issues. The debian based images might contain some GPLv3 components which leads to a conflict. I have missed the tag for the version, but it is building the image. Let me check",
+      "parentUuid": "3120e302_4456fd25",
+      "range": {
+        "startLine": 39,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "6f2514328ec056f264a3f825f21222cb40e595b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
