@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "182cac39_c1e1d722",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6841
+      },
+      "writtenOn": "2021-03-01T16:58:23Z",
+      "side": 1,
+      "message": "I think give this a different name, maybe templateId?",
+      "range": {
+        "startLine": 54,
+        "startChar": 17,
+        "endLine": 54,
+        "endChar": 19
+      },
+      "revId": "eb514d63eb47f335a1eb3119124a56225ac730cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
