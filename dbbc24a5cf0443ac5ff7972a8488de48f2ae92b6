@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbdba87a_79954be8",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-03-01T07:32:20Z",
+      "side": 1,
+      "message": "add empty line",
+      "revId": "dbbc24a5cf0443ac5ff7972a8488de48f2ae92b6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
