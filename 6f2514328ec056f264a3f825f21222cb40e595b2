@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "75fbf2f6_496f5fcf",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-03-01T09:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a679dbb4_abb00e15",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "6f2514328ec056f264a3f825f21222cb40e595b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3120e302_4456fd25",
         "filename": "cps-tbdmt-application/pom.xml",
         "patchSetId": 4
@@ -69,6 +93,30 @@
       "revId": "6f2514328ec056f264a3f825f21222cb40e595b2",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa30a9f1_9e3b6a3e",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-03-01T09:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f19cc7a_26769839",
+      "range": {
+        "startLine": 39,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "6f2514328ec056f264a3f825f21222cb40e595b2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
