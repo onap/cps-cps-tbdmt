@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79131404_dbd60eda",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-03-01T07:24:11Z",
+      "side": 1,
+      "message": "please fix the header, seems to be wrong alignment after line 4, same for others",
+      "revId": "d04d4b9ccd81631198eeef568b58137dc937d50e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c85234a3_1fb08623",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-03-01T07:24:11Z",
+      "side": 1,
+      "message": "add empty line before services",
+      "revId": "d04d4b9ccd81631198eeef568b58137dc937d50e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95ea9d67_c179e969",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6679
+      },
+      "writtenOn": "2021-03-01T07:24:11Z",
+      "side": 1,
+      "message": "add empty line, improves the readability of each config per service. same can be applied on the application.yaml",
+      "revId": "d04d4b9ccd81631198eeef568b58137dc937d50e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
