@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "cb18a6b9_2c535439",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5658
+      },
+      "writtenOn": "2021-03-02T20:36:50Z",
+      "side": 1,
+      "message": "Maybe go to start with latest 2.8.0 version",
+      "revId": "8453b9ed567cdab5d4bee2d8b5522ea6f56a5d0c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "17a75f73_5e1c0782",
         "filename": "cps-tbdmt-application/pom.xml",
         "patchSetId": 5
