@@ -22,6 +22,30 @@
       "revId": "eb514d63eb47f335a1eb3119124a56225ac730cc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4f05dd9_95ea1b11",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-02T08:50:32Z",
+      "side": 1,
+      "message": "agreed, but not blocking, wil try to merge this now",
+      "parentUuid": "182cac39_c1e1d722",
+      "range": {
+        "startLine": 54,
+        "startChar": 17,
+        "endLine": 54,
+        "endChar": 19
+      },
+      "revId": "eb514d63eb47f335a1eb3119124a56225ac730cc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
