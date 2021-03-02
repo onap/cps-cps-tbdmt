@@ -210,6 +210,52 @@
     },
     {
       "key": {
+        "uuid": "761469d6_f5a6797d",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/ExecutionController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-03-02T10:41:12Z",
+      "side": 1,
+      "message": "not matching method signature",
+      "range": {
+        "startLine": 43,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 25
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17dbcb70_8aceb322",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/ExecutionController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-03-02T10:41:12Z",
+      "side": 1,
+      "message": "check if you are using ONAP code formatter",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 42
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8b288fe_a25e8ac5",
         "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/ExecutionControllerTest.java",
         "patchSetId": 5
@@ -226,6 +272,29 @@
         "startChar": 31,
         "endLine": 70,
         "endChar": 39
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d24eca3_14b9a1ac",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/ExecutionControllerTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-03-02T10:41:12Z",
+      "side": 1,
+      "message": "Instead of repeating this constant several times use StandardCharsets.UTF_8.name() or something similar.",
+      "range": {
+        "startLine": 93,
+        "startChar": 31,
+        "endLine": 93,
+        "endChar": 38
       },
       "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
