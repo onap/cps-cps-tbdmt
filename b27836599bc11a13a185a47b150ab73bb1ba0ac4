@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "88e1a70d_a2aea55a",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-03-03T11:06:50Z",
+      "side": 1,
+      "message": "Claudio mentioned on other commit that this will be fixed. Dont think he mentioned Instanbul. As i previously commented, would prefer all cps repos to be OAS 3.",
+      "parentUuid": "d45fb6b7_0ee2775b",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e3f7b0ec_a8fa81a5",
         "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/exception/TemplateExceptionHandler.java",
         "patchSetId": 5
