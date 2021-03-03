@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "675848ba_0d0076ce",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/openapi.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-03T15:02:32Z",
+      "side": 1,
+      "message": "this sis a step in the right direction and it is great that it is done now already\nbut we stil need to us the code generation etc. as we did in CPS Core. But as before that can be address in Istanbul timeframe",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "00b90746ce2c65de3e7b50ef1b87af3933c895e7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
