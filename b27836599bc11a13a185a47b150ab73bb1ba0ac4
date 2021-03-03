@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "a19eb8fd_6622c3c6",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-03-03T13:22:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68485e06_2503a26c",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e3f7b0ec_a8fa81a5",
         "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/exception/TemplateExceptionHandler.java",
         "patchSetId": 5
