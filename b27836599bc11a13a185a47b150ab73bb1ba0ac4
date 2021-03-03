@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "68485e06_2503a26c",
+        "filename": "cps-tbdmt-rest/docs/api/swagger/swagger.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-03T11:51:26Z",
+      "side": 1,
+      "message": "Well I think it was mentioned and in any case, we have to be realistic and pragmatic.\nIf we insist on Open APi 3 now we might as well drop it from Honolulu.\nBut we did say last Friday we would try to get it in as is evn it is is not included in OOM it can be demoed use modified or local install of ONAP.\nSo I propose to approve this as is and move to Open API 3.0 will be part of requirements for Istanbul (which I am working on now)",
+      "parentUuid": "88e1a70d_a2aea55a",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e3f7b0ec_a8fa81a5",
         "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/exception/TemplateExceptionHandler.java",
         "patchSetId": 5
