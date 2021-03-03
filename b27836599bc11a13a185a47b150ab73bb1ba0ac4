@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "cddc721b_46353e00",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/exception/TemplateExceptionHandler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-03T09:04:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a7692049_efbc1b5e",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 66
+      },
+      "revId": "b27836599bc11a13a185a47b150ab73bb1ba0ac4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a3334a9_79067268",
         "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/exception/TemplateExceptionHandler.java",
         "patchSetId": 5

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4000ce3_35aaaf15",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/ExecutionControllerTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-03T09:04:52Z",
+      "side": 1,
+      "message": "as originally suggested use\n private static final String UTF8 \u003d StandardCharsets.UTF_8.name();",
+      "range": {
+        "startLine": 51,
+        "startChar": 3,
+        "endLine": 51,
+        "endChar": 47
+      },
+      "revId": "38f54481a0eb19fb933517ebff5c8a5681269f39",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d6300be_c05eaa68",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/TemplateControllerTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-03-03T09:04:52Z",
+      "side": 1,
+      "message": "see previous comment",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 47
+      },
+      "revId": "38f54481a0eb19fb933517ebff5c8a5681269f39",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
