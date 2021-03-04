@@ -39,6 +39,30 @@
       "revId": "8453b9ed567cdab5d4bee2d8b5522ea6f56a5d0c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "446e7585_b7e7c8d2",
+        "filename": "cps-tbdmt-application/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-03-04T12:17:33Z",
+      "side": 1,
+      "message": "It is an alpine based image from the integration team. It\u0027s around 152 MB. It is lighter than jre-slim",
+      "parentUuid": "17a75f73_5e1c0782",
+      "range": {
+        "startLine": 38,
+        "startChar": 30,
+        "endLine": 38,
+        "endChar": 81
+      },
+      "revId": "8453b9ed567cdab5d4bee2d8b5522ea6f56a5d0c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
