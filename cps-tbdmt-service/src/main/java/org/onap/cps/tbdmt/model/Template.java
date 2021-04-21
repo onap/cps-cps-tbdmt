@@ -49,4 +49,6 @@ public class Template implements Serializable {
 
     private String xpathTemplate;
 
+    private String apiType;
+
 }
