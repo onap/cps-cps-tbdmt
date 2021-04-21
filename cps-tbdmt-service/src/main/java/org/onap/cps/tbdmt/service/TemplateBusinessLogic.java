@@ -48,7 +48,7 @@ public class TemplateBusinessLogic {
     public Template createTemplate(final TemplateRequest templateRequest) {
         final Template template = new Template(templateRequest.getTemplateId(),
             templateRequest.getModel(),
-            templateRequest.getXpathTemplate());
+            templateRequest.getXpathTemplate(), templateRequest.getApiType());
         return templateRepository.save(template);
     }
 

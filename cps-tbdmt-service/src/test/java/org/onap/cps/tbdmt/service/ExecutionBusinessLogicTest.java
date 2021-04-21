@@ -89,7 +89,7 @@ public class ExecutionBusinessLogicTest {
         request = new ExecutionRequest(input);
         final String xpathTemplate = "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
             + "/coverage-area[@coverageArea='{{coverageArea}}']";
-        template = new Template("getNbr", "ran-network", xpathTemplate);
+        template = new Template("getNbr", "ran-network", xpathTemplate, "get");
     }
 
     @Test
@@ -97,7 +97,7 @@ public class ExecutionBusinessLogicTest {
         final String resultString = "[{\"key\": \"value\"}]";
         Mockito.when(cpsRestClient
             .fetchNode("ran-network", "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
-                + "/coverage-area[@coverageArea='Zone 1']"))
+                + "/coverage-area[@coverageArea='Zone 1']", "get"))
             .thenReturn(resultString);
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
@@ -117,7 +117,7 @@ public class ExecutionBusinessLogicTest {
         final String exceptionMessage = "Response from CPS other than 200: 404";
         Mockito.when(cpsRestClient
             .fetchNode("ran-network", "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
-                + "/coverage-area[@coverageArea='Zone 1']"))
+                + "/coverage-area[@coverageArea='Zone 1']", "get"))
             .thenThrow(new CpsClientException(exceptionMessage));
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
@@ -125,7 +125,7 @@ public class ExecutionBusinessLogicTest {
         exception.expectMessage(exceptionMessage);
         executionBusinessLogic.executeTemplate("ran-network", "getNbr", request);
 
-        final Template template1 = new Template("getNbr", "ran-net", "sample");
+        final Template template1 = new Template("getNbr", "ran-net", "sample", "get");
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template1));
         exception.expect(ExecuteException.class);
@@ -136,7 +136,7 @@ public class ExecutionBusinessLogicTest {
 
     @Test
     public void testExecuteTemplateNoAnchor() {
-        final Template template = new Template("getNbr", "ran-net", "sample");
+        final Template template = new Template("getNbr", "ran-net", "sample", "get");
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
         exception.expect(ExecuteException.class);
