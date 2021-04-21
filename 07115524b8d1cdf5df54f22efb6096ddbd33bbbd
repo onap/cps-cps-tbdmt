@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "223fa26f_67c9d491",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "if TBDMT is to reman hosted by CPS project we need to use the same (Open API 3) approach for teh web clietn.\nWE need to discuss how\u0026when to handle this",
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0650a25e_0b02e68d",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "since queryType \u0027query\u0027 is just one option you probably need a more generic name. Suggestion: requestType",
+      "range": {
+        "startLine": 58,
+        "startChar": 82,
+        "endLine": 58,
+        "endChar": 91
+      },
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a71bb9f_30b4d793",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "safer best practice is to reverse this:\n\"query\".equals(queryType)",
+      "range": {
+        "startLine": 62,
+        "startChar": 12,
+        "endLine": 62,
+        "endChar": 37
+      },
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5a6c702_9bb099ce",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/Template.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "userType ~ apiType, See also previous comment and [please use chosen name consistently",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 26
+      },
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7f45878_f1d22007",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/TemplateRequest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "name contradicts above message",
+      "range": {
+        "startLine": 48,
+        "startChar": 19,
+        "endLine": 48,
+        "endChar": 26
+      },
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eefa72ca_8fdee16a",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "If TBDMT is to remain hosted by CPS it should start using Groovy/Spock test.\nI think the earlier we start the better, we can discuss how we can help you with this.",
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c8d6470_9ff172d4",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-04-21T10:30:55Z",
+      "side": 1,
+      "message": "I don\u0027t see any test yet for \u0027query\u0027 ?!",
+      "range": {
+        "startLine": 92,
+        "startChar": 71,
+        "endLine": 92,
+        "endChar": 77
+      },
+      "revId": "07115524b8d1cdf5df54f22efb6096ddbd33bbbd",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
