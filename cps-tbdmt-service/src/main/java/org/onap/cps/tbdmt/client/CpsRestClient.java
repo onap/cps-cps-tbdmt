@@ -30,12 +30,17 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 public class CpsRestClient {
 
-    private static final String NODES_API_PATH = "%s/anchors/%s/nodes?cps-path=%s";
+    private static final String NODES_API_PATH = "/anchors/{anchor}/nodes";
+
+    private static final String QUERY_API_PATH = "/anchors/{anchor}/nodes/query";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -50,10 +55,13 @@ public class CpsRestClient {
      * @param xpath xpath query
      * @return result Response string from CPS
      */
-    public String fetchNode(final String anchor, final String xpath) throws CpsClientException {
-        final String url = appConfiguration.getXnfProxyUrl();
-
-        final String uri = String.format(NODES_API_PATH, url, anchor, xpath);
+    public String fetchNode(final String anchor, final String xpath, final String queryType) throws CpsClientException {
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
+        queryParams.add("cpsPath", xpath);
+        String uri = buildCpsUrl(NODES_API_PATH, anchor, queryParams);
+        if (queryType.equals("query")) {
+            uri = buildCpsUrl(QUERY_API_PATH, anchor, queryParams);
+        }
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -74,6 +82,18 @@ public class CpsRestClient {
             throw new CpsClientException(
                 String.format("Response code from CPS other than 200: %d", statusCode));
         }
+    }
+
+    private String buildCpsUrl(final String path, final String anchor,
+        final MultiValueMap<String, String> queryParams) {
+        final String baseUrl = appConfiguration.getXnfProxyUrl();
+
+        return UriComponentsBuilder
+            .fromHttpUrl(baseUrl)
+            .path(path)
+            .queryParams(queryParams)
+            .buildAndExpand(anchor)
+            .toUriString();
     }
 
 }
