@@ -44,4 +44,7 @@ public class TemplateRequest implements Serializable {
     @NotEmpty(message = "template missing")
     private String xpathTemplate;
 
+    @NotEmpty(message = "request type missing")
+    private String requestType;
+
 }

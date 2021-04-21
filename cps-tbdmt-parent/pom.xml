@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <cps.version>0.0.1-SNAPSHOT</cps.version>
+        <cps.version>1.0.0</cps.version>
         <java.version>11</java.version>
         <minimum-coverage>0.9</minimum-coverage>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
@@ -126,7 +126,7 @@
                         <dependency>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>spotbugs</artifactId>
-                            <version>${project.version}</version>
+                            <version>${cps.version}</version>
                         </dependency>
                         <dependency>
                             <!-- The SpotBugs Maven plugin uses SLF4J 1.8 beta 2 -->

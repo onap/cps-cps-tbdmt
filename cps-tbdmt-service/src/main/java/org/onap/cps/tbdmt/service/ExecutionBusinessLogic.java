@@ -70,8 +70,9 @@ public class ExecutionBusinessLogic {
             throw new ExecuteException("Anchor not found for the schema");
         }
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
+
         try {
-            return cpsRestClient.fetchNode(anchor, xpath);
+            return cpsRestClient.fetchNode(anchor, xpath, template.getRequestType());
         } catch (final CpsClientException e) {
             throw new ExecuteException(e.getLocalizedMessage());
         }
