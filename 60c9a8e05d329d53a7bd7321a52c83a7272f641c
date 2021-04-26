@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8059208_4ad9c7cc",
+        "filename": "cps-tbdmt-parent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6862
+      },
+      "writtenOn": "2021-04-26T13:17:06Z",
+      "side": 1,
+      "message": "Does not seem right? Plz recheck",
+      "range": {
+        "startLine": 128,
+        "startChar": 40,
+        "endLine": 129,
+        "endChar": 51
+      },
+      "revId": "60c9a8e05d329d53a7bd7321a52c83a7272f641c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
