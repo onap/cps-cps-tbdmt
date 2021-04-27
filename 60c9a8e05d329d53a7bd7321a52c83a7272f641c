@@ -22,6 +22,30 @@
       "revId": "60c9a8e05d329d53a7bd7321a52c83a7272f641c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "251ca7ae_afb3199e",
+        "filename": "cps-tbdmt-parent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-04-27T07:43:20Z",
+      "side": 1,
+      "message": "We are using the spotbugs dependency from the main cps project. Previously the version of the cps-tbdmt project(Since they had the same version - 0.0.1-SNAPSHOT). Now I am changing it to the cps version",
+      "parentUuid": "f8059208_4ad9c7cc",
+      "range": {
+        "startLine": 128,
+        "startChar": 40,
+        "endLine": 129,
+        "endChar": 51
+      },
+      "revId": "60c9a8e05d329d53a7bd7321a52c83a7272f641c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
