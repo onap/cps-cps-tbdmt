@@ -36,7 +36,12 @@ import org.springframework.web.client.RestTemplate;
 @ConfigurationProperties(prefix = "app")
 public class AppConfiguration {
 
-    private String xnfProxyUrl;
+    private CpsConfiguration cpsCore;
+
+    private CpsConfiguration ncmp;
+
+    private String cpsClient;
+
     private Map<String, String> schemaToAnchor;
 
     @Bean

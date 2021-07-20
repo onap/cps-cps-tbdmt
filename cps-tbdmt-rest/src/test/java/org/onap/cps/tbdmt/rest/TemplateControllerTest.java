@@ -65,12 +65,12 @@ public class TemplateControllerTest {
     @Before
     public void setup() {
         objectMapper = new ObjectMapper();
-        template = new Template("getNbr", "ran-network", "sample", "get");
+        template = new Template("getNbr", "ran-network", "sample", "get", true);
     }
 
     @Test
     public void testCreateTemplate() throws Exception {
-        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get");
+        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get", true);
         final String templateJson = objectMapper.writeValueAsString(templateRequest);
         Mockito.when(templateBusinessLogic.createTemplate(ArgumentMatchers.any()))
             .thenReturn(template);

@@ -71,13 +71,13 @@ public class TemplateBusinessLogicTest {
 
     @Before
     public void setup() {
-        template = new Template("getNbr", "ran-network", "sample", "get");
+        template = new Template("getNbr", "ran-network", "sample", "get", true);
         final TemplateKey templateKey = new TemplateKey("getNbr", "ran-network");
     }
 
     @Test
     public void testCreateTemplate() throws Exception {
-        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get");
+        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get", true);
         Mockito.when(templateRepository.save(ArgumentMatchers.any())).thenReturn(template);
         assertEquals(template, templateBusinessLogic.createTemplate(templateRequest));
     }

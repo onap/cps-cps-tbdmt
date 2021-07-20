@@ -86,13 +86,13 @@ public class CpsRestClientTest {
 
     @Test
     public void testFetchNode() throws Exception {
-        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes?cpsPath=sample";
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/node?xpath=sample&include-descendants=true";
         Mockito.when(restTemplate.exchange(ArgumentMatchers.eq(uri),
             ArgumentMatchers.any(HttpMethod.class),
             ArgumentMatchers.any(),
             ArgumentMatchers.<Class<String>>any()))
             .thenReturn(response);
-        assertEquals("sample response", cpsRestClient.fetchNode("coverage-area-onap", "sample", "get"));
+        assertEquals("sample response", cpsRestClient.fetchNode("coverage-area-onap", "sample", "get", true));
 
         final ResponseEntity<String> errorResponse = new ResponseEntity<>("sample response",
             responseHeaders, HttpStatus.NOT_FOUND);
@@ -103,19 +103,19 @@ public class CpsRestClientTest {
             .thenReturn(errorResponse);
         exception.expect(CpsClientException.class);
         exception.expectMessage("Response code from CPS other than 200: 404");
-        cpsRestClient.fetchNode("coverage-area-onap", "sample", "get");
+        cpsRestClient.fetchNode("coverage-area-onap", "sample", "get", true);
 
     }
 
     @Test
     public void testQueryApi() throws Exception {
-        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes/query?cpsPath=sample";
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes/query?xpath=sample&include-descendants=true";
         Mockito.when(restTemplate.exchange(ArgumentMatchers.eq(uri),
             ArgumentMatchers.any(HttpMethod.class),
             ArgumentMatchers.any(),
             ArgumentMatchers.<Class<String>>any()))
             .thenReturn(response);
-        assertEquals("sample response", cpsRestClient.fetchNode("coverage-area-onap", "sample", "query"));
+        assertEquals("sample response", cpsRestClient.fetchNode("coverage-area-onap", "sample", "query", true));
     }
 
     @Test
@@ -127,6 +127,6 @@ public class CpsRestClientTest {
             .thenThrow(new RestClientException("Connection refused"));
         exception.expect(CpsClientException.class);
         exception.expectMessage("Connection refused");
-        cpsRestClient.fetchNode("coverage-area-onap", "sample", "get");
+        cpsRestClient.fetchNode("coverage-area-onap", "sample", "get", true);
     }
 }
