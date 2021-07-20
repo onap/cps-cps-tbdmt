@@ -91,8 +91,8 @@ public class ExecutionBusinessLogicTest {
         request = new ExecutionRequest(input);
         final String xpathTemplate = "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
             + "/coverage-area[@coverageArea='{{coverageArea}}']";
-        template = new Template("getNbr", "ran-network", xpathTemplate, "get");
-        queryTemplate = new Template("getNbr", "ran-network", xpathTemplate, "query");
+        template = new Template("getNbr", "ran-network", xpathTemplate, "get", true);
+        queryTemplate = new Template("getNbr", "ran-network", xpathTemplate, "query", true);
     }
 
     @Test
@@ -100,7 +100,7 @@ public class ExecutionBusinessLogicTest {
         final String resultString = "[{\"key\": \"value\"}]";
         Mockito.when(cpsRestClient
             .fetchNode("ran-network", "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
-                + "/coverage-area[@coverageArea='Zone 1']", "get"))
+                + "/coverage-area[@coverageArea='Zone 1']", "get", true))
             .thenReturn(resultString);
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
@@ -120,7 +120,7 @@ public class ExecutionBusinessLogicTest {
         final String exceptionMessage = "Response from CPS other than 200: 404";
         Mockito.when(cpsRestClient
             .fetchNode("ran-network", "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
-                + "/coverage-area[@coverageArea='Zone 1']", "get"))
+                + "/coverage-area[@coverageArea='Zone 1']", "get", true))
             .thenThrow(new CpsClientException(exceptionMessage));
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
@@ -128,7 +128,7 @@ public class ExecutionBusinessLogicTest {
         exception.expectMessage(exceptionMessage);
         executionBusinessLogic.executeTemplate("ran-network", "getNbr", request);
 
-        final Template template1 = new Template("getNbr", "ran-net", "sample", "get");
+        final Template template1 = new Template("getNbr", "ran-net", "sample", "get", true);
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template1));
         exception.expect(ExecuteException.class);
@@ -139,7 +139,7 @@ public class ExecutionBusinessLogicTest {
 
     @Test
     public void testExecuteTemplateNoAnchor() {
-        final Template template = new Template("getNbr", "ran-net", "sample", "get");
+        final Template template = new Template("getNbr", "ran-net", "sample", "get", true);
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
         exception.expect(ExecuteException.class);
@@ -152,7 +152,7 @@ public class ExecutionBusinessLogicTest {
         final String resultString = "[{\"key\": \"value\"}]";
         Mockito.when(cpsRestClient
             .fetchNode("ran-network", "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
-                + "/coverage-area[@coverageArea='Zone 1']", "query"))
+                + "/coverage-area[@coverageArea='Zone 1']", "query", true))
             .thenReturn(resultString);
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(queryTemplate));

@@ -72,7 +72,7 @@ public class ExecutionBusinessLogic {
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
 
         try {
-            return cpsRestClient.fetchNode(anchor, xpath, template.getRequestType());
+            return cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(), template.getIncludeDescendants());
         } catch (final CpsClientException e) {
             throw new ExecuteException(e.getLocalizedMessage());
         }

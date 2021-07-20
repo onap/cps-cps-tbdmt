@@ -47,4 +47,5 @@ public class TemplateRequest implements Serializable {
     @NotEmpty(message = "request type missing")
     private String requestType;
 
+    private Boolean includeDescendants;
 }

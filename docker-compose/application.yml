@@ -36,6 +36,16 @@ spring:
           use_jdbc_metadata_defaults: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 app:
-  xnfProxyUrl: http://localhost:8000/
+  cpsCoreConfiguration:
+    url: http://192.168.1.5:8883/cps/api/v1/dataspaces/E2EDemo
+    username: cpsuser
+    password: cpsr0cks!
+  ncmpConfiguration:
+    url: http://192.168.1.5:8883/cps/api/v1
+    username: cpsuser
+    password: cpsr0cks!
+  cpsClient: cpsCore
   schemaToAnchor:
     ran-coverage-area: coverage-area-onap
+    e2e-cavsta-schemaset: e2e-cavsta1
+

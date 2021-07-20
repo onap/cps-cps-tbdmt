@@ -23,6 +23,7 @@ package org.onap.cps.tbdmt.client;
 import java.util.Arrays;
 import org.onap.cps.tbdmt.exception.CpsClientException;
 import org.onap.cps.tbdmt.model.AppConfiguration;
+import org.onap.cps.tbdmt.model.CpsConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -38,7 +39,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Component
 public class CpsRestClient {
 
-    private static final String NODES_API_PATH = "/anchors/{anchor}/nodes";
+    private static final String NODES_API_PATH = "/anchors/{anchor}/node";
 
     private static final String QUERY_API_PATH = "/anchors/{anchor}/nodes/query";
 
@@ -56,16 +57,21 @@ public class CpsRestClient {
      * @return result Response string from CPS
      */
     public String fetchNode(final String anchor, final String xpath,
-        final String requestType) throws CpsClientException {
+        final String requestType, final Boolean includeDescendants) throws CpsClientException {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
-        queryParams.add("cpsPath", xpath);
-        String uri = buildCpsUrl(NODES_API_PATH, anchor, queryParams);
-        if ("query".equals(requestType)) {
-            uri = buildCpsUrl(QUERY_API_PATH, anchor, queryParams);
-        }
+        queryParams.add("xpath", xpath);
+        queryParams.add("include-descendants", includeDescendants.toString());
+
+        final CpsConfiguration cpsConfiguration = "cpsCore".equals(appConfiguration.getCpsClient())
+            ? appConfiguration.getCpsCoreConfiguration() : appConfiguration.getNcmpConfiguration();
+
+        final String path = "query".equals(requestType) ? QUERY_API_PATH : NODES_API_PATH;
+        final String uri = buildCpsUrl(cpsConfiguration.getUrl(), path, anchor, queryParams);
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+
+        headers.setBasicAuth(cpsConfiguration.getUsername(), cpsConfiguration.getPassword());
         final HttpEntity<String> entity = new HttpEntity<>(headers);
 
         ResponseEntity<String> responseEntity = null;
@@ -85,9 +91,8 @@ public class CpsRestClient {
         }
     }
 
-    private String buildCpsUrl(final String path, final String anchor,
+    private String buildCpsUrl(final String baseUrl, final String path, final String anchor,
         final MultiValueMap<String, String> queryParams) {
-        final String baseUrl = appConfiguration.getXnfProxyUrl();
 
         return UriComponentsBuilder
             .fromHttpUrl(baseUrl)
