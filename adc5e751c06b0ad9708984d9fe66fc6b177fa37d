@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "810b231d_c91742a6",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/TemplateControllerTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "will you change to Groovy test as discussed earlier (separate task \u0026 commit of course)",
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcb95303_54a0e5ce",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "change to\n\nfinal uri;\nif (\"query\".equals(requestType)) {\n uri \u003d ...\n} else {\n uri \u003d ...\n}\n\nactually after looking more closely it coudl be somethign like\n\nfinal String path \u003d \"query\".equals(requestType) ? NODES_API_PATH : QUERY_API_PATH;\nfinal String uri \u003d buildCpsUrl(cpsConfiguration.getUrl(), path, anchor, queryParams);",
+      "range": {
+        "startLine": 67,
+        "startChar": 7,
+        "endLine": 70,
+        "endChar": 9
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b665f26a_90c3903b",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "I probably wouldn\u0027t sore in separate variables if the y are used only once\nie. just headers.setBasicAuth(cpsConfiguration.getUsername(),cpsConfiguration.getUsername())",
+      "range": {
+        "startLine": 77,
+        "startChar": 29,
+        "endLine": 77,
+        "endChar": 47
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfea1032_61ffcbc3",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/AppConfiguration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "cpsCoreConfiguration",
+      "range": {
+        "startLine": 39,
+        "startChar": 29,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "309011cf_a1a92a90",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/AppConfiguration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "ncmpConfiguration",
+      "range": {
+        "startLine": 41,
+        "startChar": 29,
+        "endLine": 41,
+        "endChar": 33
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e970ff0_617da338",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "will you convert these test to Groovy test as discussed at beginning of release?",
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1068356_270467c7",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-07-21T10:32:28Z",
+      "side": 1,
+      "message": "this might change, we need to discuss...",
+      "range": {
+        "startLine": 40,
+        "startChar": 55,
+        "endLine": 40,
+        "endChar": 62
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
