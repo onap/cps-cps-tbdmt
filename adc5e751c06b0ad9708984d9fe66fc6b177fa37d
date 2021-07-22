@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "22a467f1_058d275e",
+        "filename": "cps-tbdmt-rest/src/test/java/org/onap/cps/tbdmt/rest/TemplateControllerTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-07-22T12:37:43Z",
+      "side": 1,
+      "message": "Sure. We can track it using this jira\n\nhttps://jira.onap.org/browse/CPS-516",
+      "parentUuid": "810b231d_c91742a6",
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dcb95303_54a0e5ce",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
         "patchSetId": 1
@@ -148,6 +166,30 @@
       "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "160f30a6_e800692e",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2671
+      },
+      "writtenOn": "2021-07-22T12:37:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e1068356_270467c7",
+      "range": {
+        "startLine": 40,
+        "startChar": 55,
+        "endLine": 40,
+        "endChar": 62
+      },
+      "revId": "adc5e751c06b0ad9708984d9fe66fc6b177fa37d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
