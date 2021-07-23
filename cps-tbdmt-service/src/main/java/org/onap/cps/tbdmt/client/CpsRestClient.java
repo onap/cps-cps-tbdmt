@@ -43,6 +43,8 @@ public class CpsRestClient {
 
     private static final String QUERY_API_PATH = "/anchors/{anchor}/nodes/query";
 
+    private static final String POST_API_PATH = "/anchors/{anchor}/nodes";
+
     @Autowired
     private RestTemplate restTemplate;
 

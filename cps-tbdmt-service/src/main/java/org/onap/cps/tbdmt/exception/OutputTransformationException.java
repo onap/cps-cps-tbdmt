@@ -18,24 +18,15 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.onap.cps.tbdmt.model;
+package org.onap.cps.tbdmt.exception;
 
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
-public class TemplateKey implements Serializable {
+@ResponseStatus(HttpStatus.OK)
+public class OutputTransformationException extends RuntimeException {
 
-    private static final long serialVersionUID = 400L;
-
-    private String templateId;
-
+    public OutputTransformationException(final String exception) {
+        super(exception);
+    }
 }
