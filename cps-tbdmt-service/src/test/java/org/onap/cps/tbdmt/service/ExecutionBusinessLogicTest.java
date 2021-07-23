@@ -22,6 +22,8 @@ package org.onap.cps.tbdmt.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -40,11 +42,13 @@ import org.onap.cps.tbdmt.exception.TemplateNotFoundException;
 import org.onap.cps.tbdmt.model.AppConfiguration;
 import org.onap.cps.tbdmt.model.ExecutionRequest;
 import org.onap.cps.tbdmt.model.Template;
+import org.onap.cps.tbdmt.model.TemplateKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -87,12 +91,13 @@ public class ExecutionBusinessLogicTest {
     @Before
     public void setup() {
         final Map<String, String> input = new HashMap<>();
+        final Map<String, Object> payload = new HashMap<>();
         input.put("coverageArea", "Zone 1");
-        request = new ExecutionRequest(input);
+        request = new ExecutionRequest(input, payload);
         final String xpathTemplate = "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
             + "/coverage-area[@coverageArea='{{coverageArea}}']";
-        template = new Template("getNbr", "ran-network", xpathTemplate, "get", true);
-        queryTemplate = new Template("getNbr", "ran-network", xpathTemplate, "query", true);
+        template = new Template("getNbr", "ran-network", xpathTemplate, "get", true, "", "");
+        queryTemplate = new Template("getNbr", "ran-network", xpathTemplate, "query", true, "", "");
     }
 
     @Test
@@ -128,7 +133,7 @@ public class ExecutionBusinessLogicTest {
         exception.expectMessage(exceptionMessage);
         executionBusinessLogic.executeTemplate("ran-network", "getNbr", request);
 
-        final Template template1 = new Template("getNbr", "ran-net", "sample", "get", true);
+        final Template template1 = new Template("getNbr", "ran-net", "sample", "get", true, "", "");
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template1));
         exception.expect(ExecuteException.class);
@@ -139,7 +144,7 @@ public class ExecutionBusinessLogicTest {
 
     @Test
     public void testExecuteTemplateNoAnchor() {
-        final Template template = new Template("getNbr", "ran-net", "sample", "get", true);
+        final Template template = new Template("getNbr", "ran-net", "sample", "get", true, "", "");
         Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
             .thenReturn(Optional.of(template));
         exception.expect(ExecuteException.class);
@@ -159,6 +164,101 @@ public class ExecutionBusinessLogicTest {
         assertEquals(resultString,
             executionBusinessLogic.executeTemplate("ran-network", "getNbr", request));
 
+    }
+
+    @Test
+    public void testOutputTransform() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("idNearRTRIC", "11");
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        final String transformParam = "GNBDUFunction, NRCellDU, attributes, cellLocalId";
+        final Template template = new Template("get-nrcelldu-id", "ran-network", "/NearRTRIC/[@idNearRTRIC='11']",
+                "get", true, null, transformParam);
+        final String transformedResult = "[15299,15277]";
+        try {
+            final String result = readFromFile("sample_transform_query_data.json");
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/NearRTRIC/[@idNearRTRIC='11']", "get", true))
+                    .thenReturn(result);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template));
+            assertEquals(transformedResult,
+                    executionBusinessLogic.executeTemplate("ran-network", "get-nrcelldu-id", request));
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testPutqueryType() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("coverageArea", "Zone 1");
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        payload.put("GNBDUFunction", "sample data");
+        final Template template =
+                new Template("put-nearRTRic", "ran-network", "/NearRTRIC/[@idNearRTRIC='11']", "put", true, null, "");
+        final String result = null;
+        request = new ExecutionRequest(input, payload);
+        try {
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/NearRTRIC/[@idNearRTRIC='11']", "put", true))
+                    .thenReturn(result);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template));
+            assertEquals(result, executionBusinessLogic.executeTemplate("ran-network", "put-nearRTRic", request));
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testMultipleQuery() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("idNearRTRIC", "11");
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        final String transformParam1 = "branch, name";
+        final String transformParam2 = "name";
+        final Template template1 =
+                new Template("get-tree", "ran-network", "/test-tree", "get", true, null, transformParam1);
+        final Template template2 = new Template("get-branch", "ran-network", "/test-tree/branch[@name='{{name}}']/nest",
+                "get", true, "get-tree", transformParam2);
+        final String transformedResult = "[[\"Big\"], [\"Small\"]]";
+
+        try {
+            final String result1 = readFromFile("sample_multiple_query_data_1.json");
+            final String result2 = readFromFile("sample_multiple_query_data_2.json");
+            final String result3 = readFromFile("sample_multiple_query_data_3.json");
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/test-tree", "get", true)).thenReturn(result1);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template1));
+
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/test-tree/branch[@name='Right']/nest", "get", true))
+                    .thenReturn(result2);
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/test-tree/branch[@name='Left']/nest", "get", true))
+                    .thenReturn(result3);
+            final TemplateKey key = new TemplateKey("get-branch");
+            Mockito.when(templateRepository.findById(key)).thenReturn(Optional.of(template2));
+
+            assertEquals(transformedResult,
+                    executionBusinessLogic.executeTemplate("ran-network", "get-branch", request));
+        } catch (final CpsClientException e) {
+            e.printStackTrace();
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Reads a file from classpath.
+     *
+     * @param fileName name of the file to be read
+     * @return result contents of the file
+     */
+    public String readFromFile(final String fileName) {
+        String content = new String();
+        try {
+            final File resource = new ClassPathResource(fileName).getFile();
+            content = new String(Files.readAllBytes(resource.toPath()));
+        } catch (final Exception e) {
+            e.printStackTrace();
+            content = null;
+        }
+        return content;
     }
 
 }
