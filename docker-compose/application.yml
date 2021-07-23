@@ -48,4 +48,3 @@ app:
   schemaToAnchor:
     ran-coverage-area: coverage-area-onap
     e2e-cavsta-schemaset: e2e-cavsta1
-
