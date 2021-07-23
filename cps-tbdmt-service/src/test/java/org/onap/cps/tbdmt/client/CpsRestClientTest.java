@@ -129,4 +129,5 @@ public class CpsRestClientTest {
         exception.expectMessage("Connection refused");
         cpsRestClient.fetchNode("coverage-area-onap", "sample", "get", true);
     }
+
 }
