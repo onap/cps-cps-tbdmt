@@ -20,13 +20,24 @@
 
 package org.onap.cps.tbdmt.service;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.hubspot.jinjava.Jinjava;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import org.onap.cps.tbdmt.client.CpsRestClient;
 import org.onap.cps.tbdmt.db.TemplateRepository;
 import org.onap.cps.tbdmt.exception.CpsClientException;
 import org.onap.cps.tbdmt.exception.ExecuteException;
+import org.onap.cps.tbdmt.exception.OutputTransformationException;
 import org.onap.cps.tbdmt.exception.TemplateNotFoundException;
 import org.onap.cps.tbdmt.model.AppConfiguration;
 import org.onap.cps.tbdmt.model.ExecutionRequest;
@@ -56,26 +67,134 @@ public class ExecutionBusinessLogic {
      * @return result response from the execution of template
      */
     public String executeTemplate(final String schemaSet, final String id, final ExecutionRequest executionRequest) {
-
-        final Optional<Template> templateOptional = templateRepository.findById(new TemplateKey(id, schemaSet));
+        final Optional<Template> templateOptional = templateRepository.findById(new TemplateKey(id));
         if (templateOptional.isPresent()) {
-            return execute(templateOptional.get(), executionRequest.getInputParameters());
+            if (!(Objects.isNull(templateOptional.get().getMultipleQueryTemplateId()))
+                    && !(templateOptional.get().getMultipleQueryTemplateId().isEmpty())) {
+                return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters(),
+                        executionRequest.getPayload());
+            }
+
+            return execute(templateOptional.get(), executionRequest.getInputParameters(),
+                    executionRequest.getPayload());
         }
         throw new TemplateNotFoundException("Template does not exist");
     }
 
-    private String execute(final Template template, final Map<String, String> inputParameters) {
+    private String executeMultipleQuery(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) throws OutputTransformationException {
+        final List<Object> processedQueryOutput = new ArrayList<Object>();
+        final String multipleQuerytemplateId = template.getMultipleQueryTemplateId();
+        final Optional<Template> multipleQueryTemplate =
+                templateRepository.findById(new TemplateKey(multipleQuerytemplateId));
+        if (multipleQueryTemplate.isPresent()) {
+            String queryParamString = "";
+            final List<String> transformParamList = new ArrayList<String>(
+                    Arrays.asList(multipleQueryTemplate.get().getTransformParam().split("\\s*,\\s*")));
+            final String inputKey = transformParamList.get(transformParamList.size() - 1);
+            queryParamString = execute(multipleQueryTemplate.get(), inputParameters, payload);
+            final List<String> queryParamList = new ArrayList<String>();
+            try {
+                final Gson gson = new Gson();
+                if (new JsonParser().parse(queryParamString).isJsonArray()) {
+                    final JsonArray array = new JsonParser().parse(queryParamString).getAsJsonArray();
+
+                    for (final JsonElement jsonElement : array) {
+                        queryParamList.add(gson.fromJson(jsonElement, String.class));
+                    }
+                } else {
+                    queryParamList.add(queryParamString);
+                }
+                queryParamList.forEach(queryParam -> {
+                    final Map<String, String> inputParameter = new HashMap<String, String>();
+                    inputParameter.put(inputKey, queryParam);
+                    final Object result = execute(template, inputParameter, payload);
+                    processedQueryOutput.add(result);
+                });
+            } catch (final Exception e) {
+                throw new OutputTransformationException(e.getLocalizedMessage());
+            }
+            return processedQueryOutput.toString();
+        }
+        throw new TemplateNotFoundException("Multiple query template does not exist");
+    }
+
+    private String execute(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) {
+
         final String anchor = appConfiguration.getSchemaToAnchor().get(template.getModel());
         if (anchor == null) {
             throw new ExecuteException("Anchor not found for the schema");
         }
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
-
         try {
-            return cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(), template.getIncludeDescendants());
+            if (template.getRequestType().equalsIgnoreCase("put") || template.getRequestType().equalsIgnoreCase("patch")
+                    || template.getRequestType().equalsIgnoreCase("post")) {
+                return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
+            } else {
+                final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
+                        template.getIncludeDescendants());
+                if (!(Objects.isNull(template.getTransformParam())) && !(template.getTransformParam().isEmpty())) {
+                    final List<JsonElement> json = transform(template, result);
+                    return new Gson().toJson(json);
+                } else {
+                    return result;
+                }
+            }
         } catch (final CpsClientException e) {
             throw new ExecuteException(e.getLocalizedMessage());
         }
+    }
+
+    private List<JsonElement> transform(final Template template, final String result) {
+
+        final JsonElement transformJsonElement = new Gson().fromJson(result, JsonElement.class);
+        List<JsonElement> transformedResult;
+        List<JsonElement> temp;
+        List<JsonElement> processedOutput = new ArrayList<JsonElement>();
+        final List<String> transformParamList =
+                new ArrayList<String>(Arrays.asList(template.getTransformParam().split("\\s*,\\s*")));
+        try {
+            if (transformParamList.size() > 0) {
+                processedOutput = find(transformParamList.get(0), transformJsonElement, new ArrayList<JsonElement>());
+                transformParamList.remove(0);
+                for (final String param : transformParamList) {
+                    transformedResult = new ArrayList<JsonElement>();
+
+                    for (final JsonElement json : processedOutput) {
+                        temp = find(param, json, new ArrayList<JsonElement>());
+                        transformedResult.addAll(temp);
+                    }
+                    processedOutput.clear();
+                    processedOutput.addAll(transformedResult);
+                }
+            }
+        } catch (final Exception e) {
+            throw new OutputTransformationException(e.getLocalizedMessage());
+        }
+
+        return processedOutput;
+
+    }
+
+    private static List<JsonElement> find(final String param, final JsonElement jsonElement,
+                    final List<JsonElement> processedOutput) {
+
+        if (jsonElement.isJsonArray()) {
+            for (final JsonElement je : jsonElement.getAsJsonArray()) {
+                find(param, je, processedOutput);
+            }
+        } else {
+            if (jsonElement.isJsonObject()) {
+                final JsonObject jsonObject = jsonElement.getAsJsonObject();
+                if (jsonObject.has(param)) {
+                    processedOutput.add(jsonObject.getAsJsonObject().get(param));
+
+                }
+            }
+        }
+        return processedOutput;
+
     }
 
     private String generateXpath(final String xpathTemplate, final Map<String, String> templateParameters) {

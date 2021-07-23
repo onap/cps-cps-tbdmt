@@ -37,15 +37,16 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 app:
   cpsCoreConfiguration:
-    url: http://192.168.1.5:8883/cps/api/v1/dataspaces/E2EDemo
+    url: http://10.31.4.44:8883/cps/api/v1/dataspaces/ns-dataspace
     username: cpsuser
     password: cpsr0cks!
   ncmpConfiguration:
-    url: http://192.168.1.5:8883/cps/api/v1
+    url: http://10.31.4.44:8883/cps/api/v1
     username: cpsuser
     password: cpsr0cks!
   cpsClient: cpsCore
   schemaToAnchor:
     ran-coverage-area: coverage-area-onap
     e2e-cavsta-schemaset: e2e-cavsta1
-
+    CSIT-SchemaSet: CSIT-Anchor
+    ns-schemaset: ns-anchor

@@ -69,7 +69,7 @@ public class ExecutionControllerTest {
         executePath = "/execute/ran-network/getNbr";
         final Map<String, String> inputParameters = new HashMap<>();
         inputParameters.put("coverageArea", "Zone 1");
-        final ExecutionRequest executionRequest = new ExecutionRequest(inputParameters);
+        final ExecutionRequest executionRequest = new ExecutionRequest(inputParameters, new HashMap<String, Object>());
         final ObjectMapper objectMapper = new ObjectMapper();
         executionRequestJson = objectMapper.writeValueAsString(executionRequest);
     }
