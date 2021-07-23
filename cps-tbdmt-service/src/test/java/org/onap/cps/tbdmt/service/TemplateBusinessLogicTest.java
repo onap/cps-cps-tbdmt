@@ -71,13 +71,14 @@ public class TemplateBusinessLogicTest {
 
     @Before
     public void setup() {
-        template = new Template("getNbr", "ran-network", "sample", "get", true);
-        final TemplateKey templateKey = new TemplateKey("getNbr", "ran-network");
+        template = new Template("getNbr", "ran-network", "sample", "get", true, "sample", "getRIC");
+        final TemplateKey templateKey = new TemplateKey("getNbr");
     }
 
     @Test
     public void testCreateTemplate() throws Exception {
-        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get", true);
+        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get",
+                        true, "sample", "getRIC");
         Mockito.when(templateRepository.save(ArgumentMatchers.any())).thenReturn(template);
         assertEquals(template, templateBusinessLogic.createTemplate(templateRequest));
     }
@@ -99,7 +100,7 @@ public class TemplateBusinessLogicTest {
             .thenReturn(Optional.empty());
         exception.expect(TemplateNotFoundException.class);
         exception.expectMessage("Template not found for given id: getNbr");
-        templateBusinessLogic.getTemplate(new TemplateKey("getNbr", "empty-schema"));
+        templateBusinessLogic.getTemplate(new TemplateKey("getNbr"));
     }
 
     @Test
@@ -111,6 +112,6 @@ public class TemplateBusinessLogicTest {
         Mockito.when(templateRepository.existsById(ArgumentMatchers.any())).thenReturn(false);
         exception.expect(TemplateNotFoundException.class);
         exception.expectMessage("Template not found for given id: getNbr");
-        templateBusinessLogic.deleteTemplate(new TemplateKey("getNbr", "empty-schema"));
+        templateBusinessLogic.deleteTemplate(new TemplateKey("getNbr"));
     }
 }
