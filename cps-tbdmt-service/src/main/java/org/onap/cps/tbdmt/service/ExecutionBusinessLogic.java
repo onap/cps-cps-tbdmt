@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import org.apache.commons.lang3.StringUtils;
 import org.onap.cps.tbdmt.client.CpsRestClient;
 import org.onap.cps.tbdmt.db.TemplateRepository;
 import org.onap.cps.tbdmt.exception.CpsClientException;
@@ -62,35 +63,43 @@ public class ExecutionBusinessLogic {
      * Execute a template stored in the database.
      *
      * @param schemaSet schema set
-     * @param id id
+     * @param templateId templateId
      * @param executionRequest inputs to be applied to the templates
      * @return result response from the execution of template
      */
-    public String executeTemplate(final String schemaSet, final String id, final ExecutionRequest executionRequest) {
-        final Optional<Template> templateOptional = templateRepository.findById(new TemplateKey(id));
-        if (templateOptional.isPresent()) {
-            if (!(Objects.isNull(templateOptional.get().getMultipleQueryTemplateId()))
-                    && !(templateOptional.get().getMultipleQueryTemplateId().isEmpty())) {
-                return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters());
-            }
+    public String executeTemplate(final String schemaSet, final String templateId,
+                    final ExecutionRequest executionRequest) {
 
-            return execute(templateOptional.get(), executionRequest.getInputParameters());
+        final Optional<Template> templateOptional = templateRepository.findById(new TemplateKey(templateId));
+        if (templateOptional.isPresent()) {
+            if (!StringUtils.isBlank(templateOptional.get().getMultipleQueryTemplateId())) {
+                return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters(),
+                        executionRequest.getPayload());
+            } else {
+                return execute(templateOptional.get(), executionRequest.getInputParameters(),
+                        executionRequest.getPayload());
+            }
         }
         throw new TemplateNotFoundException("Template does not exist");
     }
 
-    private String executeMultipleQuery(final Template template, final Map<String, String> inputParameters)
-                    throws OutputTransformationException {
+    private String executeMultipleQuery(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) throws OutputTransformationException {
         final List<Object> processedQueryOutput = new ArrayList<Object>();
         final String multipleQuerytemplateId = template.getMultipleQueryTemplateId();
         final Optional<Template> multipleQueryTemplate =
                 templateRepository.findById(new TemplateKey(multipleQuerytemplateId));
-        if (multipleQueryTemplate.isPresent()) {
-            String queryParamString = "";
+        if (!multipleQueryTemplate.isPresent()) {
+            throw new TemplateNotFoundException("Multiple query template does not exist");
+        } else {
+            if (StringUtils.isBlank(multipleQueryTemplate.get().getTransformParam())) {
+                throw new OutputTransformationException("Error executing multiple query: "
+                                + "Template must have atleast one transformParameter");
+            }
             final List<String> transformParamList = new ArrayList<String>(
                     Arrays.asList(multipleQueryTemplate.get().getTransformParam().split("\\s*,\\s*")));
             final String inputKey = transformParamList.get(transformParamList.size() - 1);
-            queryParamString = execute(multipleQueryTemplate.get(), inputParameters);
+            final String queryParamString = execute(multipleQueryTemplate.get(), inputParameters, payload);
             final List<String> queryParamList = new ArrayList<String>();
             final JsonParser jsonParser = new JsonParser();
             final Gson gson = new Gson();
@@ -107,7 +116,7 @@ public class ExecutionBusinessLogic {
                 queryParamList.forEach(queryParam -> {
                     final Map<String, String> inputParameter = new HashMap<String, String>();
                     inputParameter.put(inputKey, queryParam);
-                    final Object result = execute(template, inputParameter);
+                    final Object result = execute(template, inputParameter, payload);
                     processedQueryOutput.add(result);
                 });
             } catch (final Exception e) {
@@ -115,24 +124,29 @@ public class ExecutionBusinessLogic {
             }
             return processedQueryOutput.toString();
         }
-        throw new TemplateNotFoundException("Multiple query template does not exist");
     }
 
-    private String execute(final Template template, final Map<String, String> inputParameters) {
+    private String execute(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) {
+
         final String anchor = appConfiguration.getSchemaToAnchor().get(template.getModel());
         if (anchor == null) {
             throw new ExecuteException("Anchor not found for the schema");
         }
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
-
         try {
-            final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
-                        template.getIncludeDescendants());
-            if (!(Objects.isNull(template.getTransformParam())) && !(template.getTransformParam().isEmpty())) {
-                final List<JsonElement> json = transform(template, result);
-                return new Gson().toJson(json);
+            if (template.getRequestType().equalsIgnoreCase("put") || template.getRequestType().equalsIgnoreCase("patch")
+                    || template.getRequestType().equalsIgnoreCase("post")) {
+                return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
             } else {
-                return result;
+                final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
+                        template.getIncludeDescendants());
+		if (StringUtils.isBlank(template.getTransformParam())) {
+                    return result;
+                } else {
+                    final List<JsonElement> json = transform(template, result);
+                    return new Gson().toJson(json);
+                }
             }
         } catch (final CpsClientException e) {
             throw new ExecuteException(e.getLocalizedMessage());
@@ -171,22 +185,22 @@ public class ExecutionBusinessLogic {
     }
 
     private static List<JsonElement> find(final String param, final JsonElement jsonElement,
-                    final List<JsonElement> processedOutput) {
+                    final List<JsonElement> output) {
 
         if (jsonElement.isJsonArray()) {
             for (final JsonElement je : jsonElement.getAsJsonArray()) {
-                find(param, je, processedOutput);
+                find(param, je, output);
             }
         } else {
             if (jsonElement.isJsonObject()) {
                 final JsonObject jsonObject = jsonElement.getAsJsonObject();
                 if (jsonObject.has(param)) {
-                    processedOutput.add(jsonObject.getAsJsonObject().get(param));
+                    output.add(jsonObject.getAsJsonObject().get(param));
 
                 }
             }
         }
-        return processedOutput;
+        return output;
 
     }
 

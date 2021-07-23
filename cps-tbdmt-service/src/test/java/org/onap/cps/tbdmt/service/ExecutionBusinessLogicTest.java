@@ -91,8 +91,9 @@ public class ExecutionBusinessLogicTest {
     @Before
     public void setup() {
         final Map<String, String> input = new HashMap<>();
+        final Map<String, Object> payload = new HashMap<>();
         input.put("coverageArea", "Zone 1");
-        request = new ExecutionRequest(input);
+        request = new ExecutionRequest(input, payload);
         final String xpathTemplate = "/ran-coverage-area/pLMNIdList[@mcc='310' and @mnc='410']"
             + "/coverage-area[@coverageArea='{{coverageArea}}']";
         template = new Template("getNbr", "ran-network", xpathTemplate, "get", true, "", "");
@@ -226,7 +227,7 @@ public class ExecutionBusinessLogicTest {
      * @param fileName name of the file to be read
      * @return result contents of the file
      */
-    public String readFromFile(final String fileName) {
+    private String readFromFile(final String fileName) {
         String content = new String();
         try {
             final File resource = new ClassPathResource(fileName).getFile();

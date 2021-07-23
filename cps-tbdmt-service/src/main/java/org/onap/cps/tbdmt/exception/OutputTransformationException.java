@@ -23,7 +23,7 @@ package org.onap.cps.tbdmt.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.OK)
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class OutputTransformationException extends RuntimeException {
 
     public OutputTransformationException(final String exception) {

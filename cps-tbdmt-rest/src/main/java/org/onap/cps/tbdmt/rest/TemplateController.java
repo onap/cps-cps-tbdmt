@@ -64,7 +64,7 @@ public class TemplateController {
     }
 
     /**
-     * Get Template by model and templateId.
+     * Get Template by templateId.
      *
      * @param templateId Id to find the template
      * @return template
@@ -78,7 +78,7 @@ public class TemplateController {
     }
 
     /**
-     * Delete Template by model and templateId.
+     * Delete Template by templateId.
      *
      * @param templateId Id to find the template
      */
