@@ -53,4 +53,8 @@ public class Template implements Serializable {
 
     private Boolean includeDescendants;
 
+    private String multipleQueryTemplateId;
+
+    private String transformParam;
+
 }

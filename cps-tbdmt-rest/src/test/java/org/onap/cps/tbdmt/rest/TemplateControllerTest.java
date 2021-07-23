@@ -65,12 +65,13 @@ public class TemplateControllerTest {
     @Before
     public void setup() {
         objectMapper = new ObjectMapper();
-        template = new Template("getNbr", "ran-network", "sample", "get", true);
+        template = new Template("getNbr", "ran-network", "sample", "get", true, "sample", "getRIC");
     }
 
     @Test
     public void testCreateTemplate() throws Exception {
-        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get", true);
+        final TemplateRequest templateRequest = new TemplateRequest("getNbr", "ran-network", "sample", "get",
+                        true, "sample", "getRIC");
         final String templateJson = objectMapper.writeValueAsString(templateRequest);
         Mockito.when(templateBusinessLogic.createTemplate(ArgumentMatchers.any()))
             .thenReturn(template);
@@ -116,7 +117,7 @@ public class TemplateControllerTest {
         final String templateJson = objectMapper.writeValueAsString(template);
         Mockito.when(templateBusinessLogic.getTemplate(ArgumentMatchers.any()))
             .thenReturn(template);
-        mockMvc.perform(get("/templates/ran-network/getNbr").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/templates/getNbr").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
             .andExpect(content().json(templateJson));
     }
@@ -125,20 +126,20 @@ public class TemplateControllerTest {
     public void testGetTemplateNotFound() throws Exception {
         Mockito.when(templateBusinessLogic.getTemplate(ArgumentMatchers.any()))
             .thenThrow(new TemplateNotFoundException("Template not found"));
-        mockMvc.perform(get("/templates/ran-network/getNbr").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/templates/getNbr").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNotFound());
     }
 
     @Test
     public void testDeleteTemplate() throws Exception {
         Mockito.doNothing().when(templateBusinessLogic).deleteTemplate(ArgumentMatchers.any());
-        mockMvc.perform(delete("/templates/ran-network/getNbr").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(delete("/templates/getNbr").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk());
 
         Mockito.doThrow(new TemplateNotFoundException("Template not found"))
             .when(templateBusinessLogic)
             .deleteTemplate(ArgumentMatchers.any());
-        mockMvc.perform(delete("/templates/ran-network/getNbr").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(delete("/templates/getNbr").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNotFound());
     }
 

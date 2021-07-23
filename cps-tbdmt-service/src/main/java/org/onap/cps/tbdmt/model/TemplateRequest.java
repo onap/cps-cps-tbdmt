@@ -48,4 +48,8 @@ public class TemplateRequest implements Serializable {
     private String requestType;
 
     private Boolean includeDescendants;
+
+    private String multipleQueryTemplateId;
+    
+    private String transformParam;
 }

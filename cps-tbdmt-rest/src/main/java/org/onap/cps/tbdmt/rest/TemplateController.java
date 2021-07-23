@@ -67,14 +67,12 @@ public class TemplateController {
      * Get Template by model and templateId.
      *
      * @param templateId Id to find the template
-     * @param model schema set to find the template
      * @return template
      */
-    @GetMapping(path = "/templates/{model}/{templateId}")
-    public ResponseEntity<Template> getTemplate(@PathVariable final String templateId,
-        @PathVariable final String model) {
+    @GetMapping(path = "/templates/{templateId}")
+    public ResponseEntity<Template> getTemplate(@PathVariable final String templateId) {
         return new ResponseEntity<>(
-            templateBusinessLogic.getTemplate(new TemplateKey(templateId, model)),
+            templateBusinessLogic.getTemplate(new TemplateKey(templateId)),
             HttpStatus.OK);
 
     }
@@ -83,10 +81,9 @@ public class TemplateController {
      * Delete Template by model and templateId.
      *
      * @param templateId Id to find the template
-     * @param model schema set to find the template
      */
-    @DeleteMapping(path = "/templates/{model}/{templateId}")
-    public void deleteTemplate(@PathVariable final String templateId, @PathVariable final String model) {
-        templateBusinessLogic.deleteTemplate(new TemplateKey(templateId, model));
+    @DeleteMapping(path = "/templates/{templateId}")
+    public void deleteTemplate(@PathVariable final String templateId) {
+        templateBusinessLogic.deleteTemplate(new TemplateKey(templateId));
     }
 }
