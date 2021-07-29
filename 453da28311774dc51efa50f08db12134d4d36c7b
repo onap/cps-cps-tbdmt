@@ -88,6 +88,46 @@
     },
     {
       "key": {
+        "uuid": "d1cfcf8e_822c77f4",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "Suggestion(NF):\n\nif(StringUtils.isEmpty(templateOptional.get().getMultipleQueryTemplateId()){\n    throw new TemplateNotFoundException(\"Template does not exist\");    \n} else {\n    return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters());\n}",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbc42a05_ee4cdf1f",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "take value directly at line 93",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6a49f0c0_04ec548b",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -105,6 +145,218 @@
         "endLine": 92,
         "endChar": 25
       },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87db4ca6_f7d17a4a",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "are you always sure this this size be \u003e\u003d1",
+      "range": {
+        "startLine": 92,
+        "startChar": 60,
+        "endLine": 92,
+        "endChar": 84
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58d11029_3011e275",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "throw this exception at the start for code readability.\n\nif(condition)\n{\n   throw ex\n} else {\n  .... \n}",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 86
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e4a502f_91fe2680",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "use StringUtils.isEmpty",
+      "range": {
+        "startLine": 131,
+        "startChar": 16,
+        "endLine": 131,
+        "endChar": 108
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "699e0643_e5be4b8d",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "processedOutput",
+      "range": {
+        "startLine": 152,
+        "startChar": 88,
+        "endLine": 152,
+        "endChar": 116
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d656189_5bf2724a",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "in this recursion mention terminate condition clearly.",
+      "range": {
+        "startLine": 173,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 7
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad6b80eb_74484186",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "void",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 35
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c25370b3_bbcc5670",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "else if return , else return\n\nare two terminal conditions here\n\nstate them clearly .",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f52c4197_be5defb6",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "private",
+      "range": {
+        "startLine": 229,
+        "startChar": 4,
+        "endLine": 229,
+        "endChar": 10
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c737acf_979182fd",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "restore",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65fd8ce9_80ccbc42",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 1,
+      "message": "restore",
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true

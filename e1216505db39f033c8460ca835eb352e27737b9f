@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c5352b6_b342947c",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5006
+      },
+      "writtenOn": "2021-07-29T10:51:32Z",
+      "side": 0,
+      "message": "i hope this rest endpoint is not published to any client, or nobody using it, same goes to below change.",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "e1216505db39f033c8460ca835eb352e27737b9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
