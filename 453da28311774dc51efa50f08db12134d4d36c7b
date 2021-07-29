@@ -19,6 +19,75 @@
     },
     {
       "key": {
+        "uuid": "cfe61665_567c9777",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-29T10:01:38Z",
+      "side": 1,
+      "message": "Change description to match the new method",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dec034eb_930ada32",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-29T10:01:38Z",
+      "side": 1,
+      "message": "unused?",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da7e8cfb_efbd5cb2",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2021-07-29T10:01:38Z",
+      "side": 1,
+      "message": "is this templateID? If yes it is better to rename to templateId",
+      "range": {
+        "startLine": 69,
+        "startChar": 71,
+        "endLine": 69,
+        "endChar": 73
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6a49f0c0_04ec548b",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
