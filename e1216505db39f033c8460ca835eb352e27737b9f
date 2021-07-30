@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d8da320_bf538121",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/model/CpsConfiguration.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2021-07-30T10:58:45Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be included in the license. See https://wiki.onap.org/display/DW/Contribution+and+Development#ContributionandDevelopment-LicenceDeclarations",
+      "range": {
+        "startLine": 3,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 7
+      },
+      "revId": "e1216505db39f033c8460ca835eb352e27737b9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
