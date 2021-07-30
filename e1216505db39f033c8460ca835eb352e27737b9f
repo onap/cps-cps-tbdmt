@@ -22,6 +22,30 @@
       "revId": "e1216505db39f033c8460ca835eb352e27737b9f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8368df4c_af3f581e",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3c5352b6_b342947c",
+      "range": {
+        "startLine": 73,
+        "startChar": 35,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "e1216505db39f033c8460ca835eb352e27737b9f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }

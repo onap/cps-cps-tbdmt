@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c03be86e_6cfffff7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "120aec7a_ba816727",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cfe61665_567c9777",
         "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
         "patchSetId": 5
@@ -39,6 +57,30 @@
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0950aedf_c3915ff5",
+        "filename": "cps-tbdmt-rest/src/main/java/org/onap/cps/tbdmt/rest/TemplateController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfe61665_567c9777",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "23b397e4_d3b60ea3",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dec034eb_930ada32",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7e8cfb_efbd5cb2",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "2aa522e2_361332f9",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7e8cfb_efbd5cb2",
+      "range": {
+        "startLine": 69,
+        "startChar": 71,
+        "endLine": 69,
+        "endChar": 73
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1cfcf8e_822c77f4",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -102,6 +192,24 @@
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96af4b01_f1a4deb3",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1cfcf8e_822c77f4",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -125,6 +233,30 @@
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc3fca42_7e01d5ce",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbc42a05_ee4cdf1f",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -174,6 +306,54 @@
     },
     {
       "key": {
+        "uuid": "e5be5efc_654a31b2",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Changed the condition now to avoid any exceptions.",
+      "parentUuid": "87db4ca6_f7d17a4a",
+      "range": {
+        "startLine": 92,
+        "startChar": 60,
+        "endLine": 92,
+        "endChar": 84
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e2e328b_bb4229af",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "var?? Could you please explain?",
+      "parentUuid": "6a49f0c0_04ec548b",
+      "range": {
+        "startLine": 92,
+        "startChar": 18,
+        "endLine": 92,
+        "endChar": 25
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "58d11029_3011e275",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -194,6 +374,30 @@
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30fbaac9_cc18fcb4",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58d11029_3011e275",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 86
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -220,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "5096bcbc_7a74f9d0",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e4a502f_91fe2680",
+      "range": {
+        "startLine": 131,
+        "startChar": 16,
+        "endLine": 131,
+        "endChar": 108
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "699e0643_e5be4b8d",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -231,6 +459,30 @@
       "writtenOn": "2021-07-29T10:51:32Z",
       "side": 1,
       "message": "processedOutput",
+      "range": {
+        "startLine": 152,
+        "startChar": 88,
+        "endLine": 152,
+        "endChar": 116
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dc1379d_fb8be62c",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Updated the jira with more details so you can get some idea of what I am trying to achieve here. Let me know if it still requires any changes.",
+      "parentUuid": "699e0643_e5be4b8d",
       "range": {
         "startLine": 152,
         "startChar": 88,
@@ -289,6 +541,54 @@
     },
     {
       "key": {
+        "uuid": "b77f3a3f_fe2e63c7",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "This method requires a return type.",
+      "parentUuid": "ad6b80eb_74484186",
+      "range": {
+        "startLine": 173,
+        "startChar": 19,
+        "endLine": 173,
+        "endChar": 35
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18aef9a7_48f583e4",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "It\u0027s a generic method to find required json objects to transform the result. I think there is no use for a else condition since it will return an empty list, if required result not found(after complete iteration of elements in \u0027for\u0027 loop).\nLet me know if it still requires any changes or if I misunderstood your comment.",
+      "parentUuid": "3d656189_5bf2724a",
+      "range": {
+        "startLine": 173,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 7
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c25370b3_bbcc5670",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 5
@@ -300,6 +600,24 @@
       "writtenOn": "2021-07-29T10:51:32Z",
       "side": 1,
       "message": "else if return , else return\n\nare two terminal conditions here\n\nstate them clearly .",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "973f2062_a601d11e",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Explained in the previous comment. I have to iterate through all the elements before I can return the result.",
+      "parentUuid": "c25370b3_bbcc5670",
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
@@ -329,6 +647,30 @@
     },
     {
       "key": {
+        "uuid": "3050f305_ae400b6c",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f52c4197_be5defb6",
+      "range": {
+        "startLine": 229,
+        "startChar": 4,
+        "endLine": 229,
+        "endChar": 10
+      },
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c737acf_979182fd",
         "filename": "docker-compose/application.yml",
         "patchSetId": 5
@@ -346,6 +688,24 @@
     },
     {
       "key": {
+        "uuid": "114a4b58_fa8ddb91",
+        "filename": "docker-compose/application.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c737acf_979182fd",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "65fd8ce9_80ccbc42",
         "filename": "docker-compose/docker-compose.yml",
         "patchSetId": 5
@@ -360,6 +720,24 @@
       "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c72c857d_0663cdf9",
+        "filename": "docker-compose/docker-compose.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-07-30T11:37:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "65fd8ce9_80ccbc42",
+      "revId": "453da28311774dc51efa50f08db12134d4d36c7b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
