@@ -72,17 +72,18 @@ public class ExecutionBusinessLogic {
         final Optional<Template> templateOptional = templateRepository.findById(new TemplateKey(templateId));
         if (templateOptional.isPresent()) {
             if (!StringUtils.isBlank(templateOptional.get().getMultipleQueryTemplateId())) {
-                return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters());
+                return executeMultipleQuery(templateOptional.get(), executionRequest.getInputParameters(),
+                        executionRequest.getPayload());
             } else {
-                return execute(templateOptional.get(), executionRequest.getInputParameters());
+                return execute(templateOptional.get(), executionRequest.getInputParameters(),
+                        executionRequest.getPayload());
             }
         }
         throw new TemplateNotFoundException("Template does not exist");
     }
 
-    private String executeMultipleQuery(final Template template, final Map<String, String> inputParameters)
-                    throws OutputTransformationException {
-
+    private String executeMultipleQuery(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) throws OutputTransformationException {
         final List<Object> processedQueryOutput = new ArrayList<Object>();
         final String multipleQuerytemplateId = template.getMultipleQueryTemplateId();
         final Optional<Template> multipleQueryTemplate =
@@ -97,7 +98,7 @@ public class ExecutionBusinessLogic {
             final List<String> transformParamList = new ArrayList<String>(
                     Arrays.asList(multipleQueryTemplate.get().getTransformParam().split("\\s*,\\s*")));
             final String inputKey = transformParamList.get(transformParamList.size() - 1);
-            final String queryParamString = execute(multipleQueryTemplate.get(), inputParameters);
+            final String queryParamString = execute(multipleQueryTemplate.get(), inputParameters, payload);
             final List<String> queryParamList = new ArrayList<String>();
             final JsonParser jsonParser = new JsonParser();
             final Gson gson = new Gson();
@@ -114,7 +115,7 @@ public class ExecutionBusinessLogic {
                 queryParamList.forEach(queryParam -> {
                     final Map<String, String> inputParameter = new HashMap<String, String>();
                     inputParameter.put(inputKey, queryParam);
-                    final Object result = execute(template, inputParameter);
+                    final Object result = execute(template, inputParameter, payload);
                     processedQueryOutput.add(result);
                 });
             } catch (final Exception e) {
@@ -124,21 +125,27 @@ public class ExecutionBusinessLogic {
         }
     }
 
-    private String execute(final Template template, final Map<String, String> inputParameters) {
+    private String execute(final Template template, final Map<String, String> inputParameters,
+            final Map<String, Object> payload) {
+
         final String anchor = appConfiguration.getSchemaToAnchor().get(template.getModel());
         if (anchor == null) {
             throw new ExecuteException("Anchor not found for the schema");
         }
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
-
         try {
-            final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
-                        template.getIncludeDescendants());
-            if (StringUtils.isBlank(template.getTransformParam())) {
-                return result;
+            if (template.getRequestType().equalsIgnoreCase("put") || template.getRequestType().equalsIgnoreCase("patch")
+                    || template.getRequestType().equalsIgnoreCase("post")) {
+                return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
             } else {
-                final List<JsonElement> json = transform(template, result);
-                return new Gson().toJson(json);
+                final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
+                        template.getIncludeDescendants());
+                if (StringUtils.isBlank(template.getTransformParam())) {
+                    return result;
+                } else {
+                    final List<JsonElement> json = transform(template, result);
+                    return new Gson().toJson(json);
+                }
             }
         } catch (final CpsClientException e) {
             throw new ExecuteException(e.getLocalizedMessage());

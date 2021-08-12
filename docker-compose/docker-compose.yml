@@ -51,3 +51,4 @@ services:
       - postgres
     networks:
       - cps-tbdmt-default
+
