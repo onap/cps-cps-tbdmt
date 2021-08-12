@@ -33,4 +33,6 @@ import lombok.Setter;
 public class ExecutionRequest {
 
     private Map<String, String> inputParameters;
+
+    private Map<String, Object> payload;
 }

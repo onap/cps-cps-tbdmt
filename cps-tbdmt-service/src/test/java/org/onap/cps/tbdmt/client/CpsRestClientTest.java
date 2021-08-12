@@ -22,6 +22,8 @@ package org.onap.cps.tbdmt.client;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -130,4 +132,36 @@ public class CpsRestClientTest {
         cpsRestClient.fetchNode("coverage-area-onap", "sample", "get", true);
     }
 
+    @Test
+    public void testAddDataForPostRequest() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes";
+        Mockito.when(restTemplate.postForEntity(ArgumentMatchers.eq(uri), ArgumentMatchers.any(),
+                ArgumentMatchers.<Class<String>>any())).thenReturn(response);
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        payload.put("idNearRTRIC", 11);
+        assertEquals("sample response", cpsRestClient.addData("coverage-area-onap", "NearRTRIC", "post", payload));
+
+    }
+
+    @Test
+    public void testAddDataForPutRequest() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes?xpath=NearRTRIC";
+        Mockito.when(restTemplate.exchange(ArgumentMatchers.eq(uri), ArgumentMatchers.any(HttpMethod.class),
+                ArgumentMatchers.any(), ArgumentMatchers.<Class<String>>any())).thenReturn(response);
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        payload.put("idNearRTRIC", 11);
+        assertEquals("sample response", cpsRestClient.addData("coverage-area-onap", "NearRTRIC", "put", payload));
+
+    }
+
+    @Test
+    public void testAddDataForPatchRequest() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes?xpath=NearRTRIC";
+        Mockito.when(restTemplate.patchForObject(ArgumentMatchers.eq(uri), ArgumentMatchers.any(),
+                ArgumentMatchers.<Class<String>>any())).thenReturn("sample response");
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        payload.put("idNearRTRIC", 11);
+        assertEquals("sample response", cpsRestClient.addData("coverage-area-onap", "NearRTRIC", "patch", payload));
+
+    }
 }

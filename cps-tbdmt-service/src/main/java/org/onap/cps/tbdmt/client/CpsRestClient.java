@@ -21,6 +21,7 @@
 package org.onap.cps.tbdmt.client;
 
 import java.util.Arrays;
+import java.util.Map;
 import org.onap.cps.tbdmt.exception.CpsClientException;
 import org.onap.cps.tbdmt.model.AppConfiguration;
 import org.onap.cps.tbdmt.model.CpsConfiguration;
@@ -30,6 +31,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -42,6 +44,8 @@ public class CpsRestClient {
     private static final String NODES_API_PATH = "/anchors/{anchor}/node";
 
     private static final String QUERY_API_PATH = "/anchors/{anchor}/nodes/query";
+
+    private static final String POST_API_PATH = "/anchors/{anchor}/nodes";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -88,6 +92,49 @@ public class CpsRestClient {
         } else {
             throw new CpsClientException(
                 String.format("Response code from CPS other than 200: %d", statusCode));
+        }
+    }
+
+    /**
+     * Post data to CPS using xpath.
+     *
+     * @param anchor anchor
+     * @param xpath xpath query
+     * @param requestType http request type
+     * @param payload request body
+     * @return result Response string from CPS
+     */
+    public String addData(final String anchor, final String xpath, final String requestType,
+            final Map<String, Object> payload) throws CpsClientException {
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
+        queryParams.add("xpath", xpath);
+        final CpsConfiguration cpsConfiguration = "cpsCore".equals(appConfiguration.getCpsClient())
+            ? appConfiguration.getCpsCoreConfiguration() : appConfiguration.getNcmpConfiguration();
+
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBasicAuth(cpsConfiguration.getUsername(), cpsConfiguration.getPassword());
+        final HttpEntity<String> entity = new HttpEntity<>(new com.google.gson.Gson().toJson(payload), headers);
+
+        String uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, queryParams);
+        try {
+            if (requestType.equalsIgnoreCase("post")) {
+                uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, new LinkedMultiValueMap<>());
+                return restTemplate.postForEntity(uri, entity, String.class).getBody();
+            } else if (requestType.equalsIgnoreCase("patch")) {
+                final HttpComponentsClientHttpRequestFactory requestFactory
+                        = new HttpComponentsClientHttpRequestFactory();
+                requestFactory.setConnectTimeout(10000);
+                requestFactory.setReadTimeout(10000);
+                restTemplate.setRequestFactory(requestFactory);
+                return restTemplate.patchForObject(uri, entity, String.class);
+            } else {
+                return restTemplate.exchange(uri, HttpMethod.PUT, entity, String.class).getBody();
+            }
+        } catch (final Exception e) {
+            throw new CpsClientException(e.getLocalizedMessage());
         }
     }
 
