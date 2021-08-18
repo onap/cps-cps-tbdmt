@@ -47,6 +47,8 @@ public class CpsRestClient {
 
     private static final String POST_API_PATH = "/anchors/{anchor}/nodes";
 
+    private static final String LIST_NODE_API_PATH = "/anchors/{anchor}/list-node";
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -63,13 +65,23 @@ public class CpsRestClient {
     public String fetchNode(final String anchor, final String xpath,
         final String requestType, final Boolean includeDescendants) throws CpsClientException {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
-        queryParams.add("xpath", xpath);
-        queryParams.add("include-descendants", includeDescendants.toString());
 
         final CpsConfiguration cpsConfiguration = "cpsCore".equals(appConfiguration.getCpsClient())
             ? appConfiguration.getCpsCoreConfiguration() : appConfiguration.getNcmpConfiguration();
-
-        final String path = "query".equals(requestType) ? QUERY_API_PATH : NODES_API_PATH;
+        String path = NODES_API_PATH;
+        switch (requestType) {
+            case "query-cps-path":
+                queryParams.add("cps-path", xpath);
+                path = QUERY_API_PATH;
+                break;
+            case "query":
+                queryParams.add("xpath", xpath);
+                path = QUERY_API_PATH;
+                break;
+            default:
+                queryParams.add("xpath", xpath);
+        }
+        queryParams.add("include-descendants", includeDescendants.toString());
         final String uri = buildCpsUrl(cpsConfiguration.getUrl(), path, anchor, queryParams);
 
         final HttpHeaders headers = new HttpHeaders();
@@ -120,18 +132,22 @@ public class CpsRestClient {
 
         String uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, queryParams);
         try {
-            if (requestType.equalsIgnoreCase("post")) {
-                uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, new LinkedMultiValueMap<>());
-                return restTemplate.postForEntity(uri, entity, String.class).getBody();
-            } else if (requestType.equalsIgnoreCase("patch")) {
-                final HttpComponentsClientHttpRequestFactory requestFactory
-                        = new HttpComponentsClientHttpRequestFactory();
-                requestFactory.setConnectTimeout(10000);
-                requestFactory.setReadTimeout(10000);
-                restTemplate.setRequestFactory(requestFactory);
-                return restTemplate.patchForObject(uri, entity, String.class);
-            } else {
-                return restTemplate.exchange(uri, HttpMethod.PUT, entity, String.class).getBody();
+            switch (requestType) {
+                case "post":
+                    uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, new LinkedMultiValueMap<>());
+                    return restTemplate.postForEntity(uri, entity, String.class).getBody();
+                case "patch":
+                    final HttpComponentsClientHttpRequestFactory requestFactory =
+                            new HttpComponentsClientHttpRequestFactory();
+                    requestFactory.setConnectTimeout(10000);
+                    requestFactory.setReadTimeout(10000);
+                    restTemplate.setRequestFactory(requestFactory);
+                    return restTemplate.patchForObject(uri, entity, String.class);
+                case "post-list-node":
+                    uri = buildCpsUrl(cpsConfiguration.getUrl(), LIST_NODE_API_PATH, anchor, queryParams);
+                    return restTemplate.postForEntity(uri, entity, String.class).getBody();
+                default:
+                    return restTemplate.exchange(uri, HttpMethod.PUT, entity, String.class).getBody();
             }
         } catch (final Exception e) {
             throw new CpsClientException(e.getLocalizedMessage());

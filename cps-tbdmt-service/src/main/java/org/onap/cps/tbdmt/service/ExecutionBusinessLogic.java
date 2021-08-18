@@ -134,8 +134,9 @@ public class ExecutionBusinessLogic {
         }
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
         try {
-            if (template.getRequestType().equalsIgnoreCase("put") || template.getRequestType().equalsIgnoreCase("patch")
-                    || template.getRequestType().equalsIgnoreCase("post")) {
+            if ("put".equalsIgnoreCase(template.getRequestType()) || "patch".equalsIgnoreCase(template.getRequestType())
+                    || "post".equalsIgnoreCase(template.getRequestType())
+                    || "post-list-node".equalsIgnoreCase(template.getRequestType())) {
                 return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
             } else {
                 final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
