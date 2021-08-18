@@ -135,7 +135,8 @@ public class ExecutionBusinessLogic {
         final String xpath = generateXpath(template.getXpathTemplate(), inputParameters);
         try {
             if (template.getRequestType().equalsIgnoreCase("put") || template.getRequestType().equalsIgnoreCase("patch")
-                    || template.getRequestType().equalsIgnoreCase("post")) {
+                    || template.getRequestType().equalsIgnoreCase("post")
+                    || template.getRequestType().equalsIgnoreCase("post-list-node")) {
                 return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
             } else {
                 final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
