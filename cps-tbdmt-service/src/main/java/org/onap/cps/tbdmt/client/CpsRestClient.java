@@ -47,6 +47,8 @@ public class CpsRestClient {
 
     private static final String POST_API_PATH = "/anchors/{anchor}/nodes";
 
+    private static final String LIST_NODE_API_PATH = "/anchors/{anchor}/list-node";
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -63,13 +65,20 @@ public class CpsRestClient {
     public String fetchNode(final String anchor, final String xpath,
         final String requestType, final Boolean includeDescendants) throws CpsClientException {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
-        queryParams.add("xpath", xpath);
-        queryParams.add("include-descendants", includeDescendants.toString());
 
         final CpsConfiguration cpsConfiguration = "cpsCore".equals(appConfiguration.getCpsClient())
             ? appConfiguration.getCpsCoreConfiguration() : appConfiguration.getNcmpConfiguration();
-
-        final String path = "query".equals(requestType) ? QUERY_API_PATH : NODES_API_PATH;
+        String path = NODES_API_PATH;
+        if (requestType.equalsIgnoreCase("query-cps-path")) {
+            queryParams.add("cps-path", xpath);
+            path = QUERY_API_PATH;
+        } else if (requestType.equalsIgnoreCase("query")) {
+            queryParams.add("xpath", xpath);
+            path = QUERY_API_PATH;
+        } else {
+            queryParams.add("xpath", xpath);
+        }
+        queryParams.add("include-descendants", includeDescendants.toString());
         final String uri = buildCpsUrl(cpsConfiguration.getUrl(), path, anchor, queryParams);
 
         final HttpHeaders headers = new HttpHeaders();
@@ -130,6 +139,9 @@ public class CpsRestClient {
                 requestFactory.setReadTimeout(10000);
                 restTemplate.setRequestFactory(requestFactory);
                 return restTemplate.patchForObject(uri, entity, String.class);
+            } else if (requestType.equalsIgnoreCase("post-list-node")) {
+                uri = buildCpsUrl(cpsConfiguration.getUrl(), LIST_NODE_API_PATH, anchor, queryParams);
+                return restTemplate.postForEntity(uri, entity, String.class).getBody();
             } else {
                 return restTemplate.exchange(uri, HttpMethod.PUT, entity, String.class).getBody();
             }
