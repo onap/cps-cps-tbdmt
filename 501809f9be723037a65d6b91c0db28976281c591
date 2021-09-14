@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a117845e_42cffa47",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-09-14T15:22:14Z",
+      "side": 1,
+      "message": "it was agreed that TBDMT was going to use the Groovy/Spock framework as in other CPS components. I hope you get to that in J as I find it hard now to read/review these tests...",
+      "range": {
+        "startLine": 168,
+        "startChar": 4,
+        "endLine": 200,
+        "endChar": 5
+      },
+      "revId": "501809f9be723037a65d6b91c0db28976281c591",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
