@@ -76,7 +76,7 @@ public class ExecutionBusinessLogic {
                         executionRequest.getPayload());
             } else {
                 return execute(templateOptional.get(), executionRequest.getInputParameters(),
-                        executionRequest.getPayload());
+                        executionRequest.getPayload(), schemaSet);
             }
         }
         throw new TemplateNotFoundException("Template does not exist");
@@ -98,7 +98,8 @@ public class ExecutionBusinessLogic {
             final List<String> transformParamList = new ArrayList<String>(
                     Arrays.asList(multipleQueryTemplate.get().getTransformParam().split("\\s*,\\s*")));
             final String inputKey = transformParamList.get(transformParamList.size() - 1);
-            final String queryParamString = execute(multipleQueryTemplate.get(), inputParameters, payload);
+            final String queryParamString = execute(multipleQueryTemplate.get(), inputParameters,
+                            payload, template.getModel());
             final List<String> queryParamList = new ArrayList<String>();
             final JsonParser jsonParser = new JsonParser();
             final Gson gson = new Gson();
@@ -115,7 +116,7 @@ public class ExecutionBusinessLogic {
                 queryParamList.forEach(queryParam -> {
                     final Map<String, String> inputParameter = new HashMap<String, String>();
                     inputParameter.put(inputKey, queryParam);
-                    final Object result = execute(template, inputParameter, payload);
+                    final Object result = execute(template, inputParameter, payload, template.getModel());
                     processedQueryOutput.add(result);
                 });
             } catch (final Exception e) {
@@ -126,9 +127,10 @@ public class ExecutionBusinessLogic {
     }
 
     private String execute(final Template template, final Map<String, String> inputParameters,
-            final Map<String, Object> payload) {
+            final Map<String, Object> payload, final String schemaSet) {
 
-        final String anchor = appConfiguration.getSchemaToAnchor().get(template.getModel());
+        final String anchor = "dynamic".equalsIgnoreCase(template.getModel())
+            ?  schemaSet : appConfiguration.getSchemaToAnchor().get(template.getModel());
         if (anchor == null) {
             throw new ExecuteException("Anchor not found for the schema");
         }
@@ -138,6 +140,9 @@ public class ExecutionBusinessLogic {
                     || "post".equalsIgnoreCase(template.getRequestType())
                     || "post-list-node".equalsIgnoreCase(template.getRequestType())) {
                 return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
+            } else if ("delete".equalsIgnoreCase(template.getRequestType())
+                    || "delete-list-node".equalsIgnoreCase(template.getRequestType())) {
+                return cpsRestClient.deleteData(anchor, xpath, template.getRequestType());
             } else {
                 final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
                         template.getIncludeDescendants());

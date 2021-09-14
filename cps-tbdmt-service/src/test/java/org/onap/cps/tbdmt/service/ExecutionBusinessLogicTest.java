@@ -221,6 +221,39 @@ public class ExecutionBusinessLogicTest {
         }
     }
 
+    @Test
+    public void testDeleteDataRequest() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("idNearRTRIC", "11");
+        final String transformParam = "GNBDUFunction, NRCellDU, attributes, cellLocalId";
+        final Template template = new Template("delete-snssai", "ran-network",
+                  "/NearRTRIC/[@idNearRTRIC='11']/attributes/"
+                + "pLMNInfoList[@mcc='370' and '@mnc='410']/sNSSAIList[@sNssai='111-1111']",
+                  "delete-list-node", true, null, null);
+        try {
+            final String result = "Success";
+            Mockito.when(cpsRestClient.deleteData("ran-network", "/NearRTRIC/[@idNearRTRIC='11']/attributes/"
+              + "pLMNInfoList[@mcc='370' and '@mnc='410']/sNSSAIList[@sNssai='111-1111']", "delete-list-node"))
+                    .thenReturn(result);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template));
+            assertEquals("Success",
+                    executionBusinessLogic.executeTemplate("ran-network", "delete-snssai", request));
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testDeleteDataFailRequest() throws Exception {
+        final Template template = new Template("deleteNbr", "ran-network", "sample", "delete-list-node", true, "", "");
+        Mockito.when(cpsRestClient.deleteData("ran-network", "sample", "delete-list-node"))
+               .thenThrow(new ExecuteException("Response code from CPS other than 200: 401"));
+        Mockito.when(templateRepository.findById(ArgumentMatchers.any()))
+               .thenReturn(Optional.of(template));
+        exception.expect(ExecuteException.class);
+        executionBusinessLogic.executeTemplate("ran-net", "deleteNbr", request);
+    }
+
     /**
      * Reads a file from classpath.
      *
