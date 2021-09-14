@@ -164,4 +164,38 @@ public class CpsRestClientTest {
         assertEquals("sample response", cpsRestClient.addData("coverage-area-onap", "NearRTRIC", "patch", payload));
 
     }
+
+    @Test
+    public void testAddDataForPostListNodesRequest() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/list-nodes?xpath=NearRTRIC";
+        Mockito.when(restTemplate.postForEntity(ArgumentMatchers.eq(uri), ArgumentMatchers.any(),
+                ArgumentMatchers.<Class<String>>any())).thenReturn(response);
+        final Map<String, Object> payload = new HashMap<String, Object>();
+        payload.put("idNearRTRIC", 11);
+        assertEquals("sample response", cpsRestClient.addData("coverage-area-onap", "NearRTRIC",
+                               "post-list-node", payload));
+
+    }
+
+    @Test
+    public void deleteListNodeData() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/list-nodes?xpath=sample";
+        Mockito.when(restTemplate.exchange(ArgumentMatchers.eq(uri),
+            ArgumentMatchers.any(HttpMethod.class),
+            ArgumentMatchers.any(),
+            ArgumentMatchers.<Class<String>>any()))
+            .thenReturn(response);
+        assertEquals("sample response", cpsRestClient.deleteData("coverage-area-onap", "sample", "delete-list-node"));
+    }
+
+    @Test
+    public void deleteNodeData() throws Exception {
+        final String uri = "http://localhost:8000/anchors/coverage-area-onap/nodes?xpath=sample";
+        Mockito.when(restTemplate.exchange(ArgumentMatchers.eq(uri),
+            ArgumentMatchers.any(HttpMethod.class),
+            ArgumentMatchers.any(),
+            ArgumentMatchers.<Class<String>>any()))
+            .thenReturn(response);
+        assertEquals("sample response", cpsRestClient.deleteData("coverage-area-onap", "sample", "delete"));
+    }
 }

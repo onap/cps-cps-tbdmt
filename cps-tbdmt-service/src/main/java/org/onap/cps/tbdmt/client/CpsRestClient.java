@@ -47,7 +47,7 @@ public class CpsRestClient {
 
     private static final String POST_API_PATH = "/anchors/{anchor}/nodes";
 
-    private static final String LIST_NODE_API_PATH = "/anchors/{anchor}/list-node";
+    private static final String LIST_NODE_API_PATH = "/anchors/{anchor}/list-nodes";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -151,6 +151,49 @@ public class CpsRestClient {
             }
         } catch (final Exception e) {
             throw new CpsClientException(e.getLocalizedMessage());
+        }
+    }
+
+    /**
+     * Delete data from the CPS using xpath.
+     *
+     * @param anchor anchor
+     * @param xpath xpath query
+     * @return result Response string from CPS
+     */
+    public String deleteData(final String anchor, final String xpath,
+              final String requestType) throws CpsClientException {
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
+        queryParams.add("xpath", xpath);
+        final CpsConfiguration cpsConfiguration = "cpsCore".equals(appConfiguration.getCpsClient())
+            ? appConfiguration.getCpsCoreConfiguration() : appConfiguration.getNcmpConfiguration();
+
+        String uri = buildCpsUrl(cpsConfiguration.getUrl(), POST_API_PATH, anchor, queryParams);
+
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setBasicAuth(cpsConfiguration.getUsername(), cpsConfiguration.getPassword());
+        final HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> responseEntity = null;
+        try {
+            if ("delete-list-node".equalsIgnoreCase(requestType)) {
+                uri = buildCpsUrl(cpsConfiguration.getUrl(), LIST_NODE_API_PATH, anchor, queryParams);
+                responseEntity = restTemplate.exchange(uri, HttpMethod.DELETE, entity, String.class);
+            } else {
+                responseEntity = restTemplate.exchange(uri, HttpMethod.DELETE, entity, String.class);
+            }
+        } catch (final Exception e) {
+            throw new CpsClientException(e.getLocalizedMessage());
+        }
+
+        final int statusCode = responseEntity.getStatusCodeValue();
+
+        if (statusCode == 200) {
+            return responseEntity.getBody();
+        } else {
+            throw new CpsClientException(
+                String.format("Response code from CPS other than 200: %d", statusCode));
         }
     }
 
