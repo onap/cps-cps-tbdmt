@@ -221,6 +221,28 @@ public class ExecutionBusinessLogicTest {
         }
     }
 
+    @Test
+    public void testDeleteDataRequest() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("idNearRTRIC", "11");
+        final String transformParam = "GNBDUFunction, NRCellDU, attributes, cellLocalId";
+        final Template template = new Template("delete-snssai", "ran-network", "/NearRTRIC/[@idNearRTRIC='11']/attributes/" + 
+           "pLMNInfoList[@mcc='370' and '@mnc='410']/sNSSAIList[@sNssai='111-1111']",
+                "delete-list-node", true, null, null);
+        final String transformedResult = "";
+        try {
+            final String result = "";
+            Mockito.when(cpsRestClient.deleteData("ran-network", "/NearRTRIC/[@idNearRTRIC='11']/attributes/" + 
+              "pLMNInfoList[@mcc='370' and '@mnc='410']/sNSSAIList[@sNssai='111-1111']", "delete-list-node"))
+                    .thenReturn(result);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template));
+            assertEquals(transformedResult,
+                    executionBusinessLogic.executeTemplate("ran-network", "delete-snssai", request));
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Reads a file from classpath.
      *

@@ -138,6 +138,9 @@ public class ExecutionBusinessLogic {
                     || "post".equalsIgnoreCase(template.getRequestType())
                     || "post-list-node".equalsIgnoreCase(template.getRequestType())) {
                 return cpsRestClient.addData(anchor, xpath, template.getRequestType(), payload);
+            } else if ("delete".equalsIgnoreCase(template.getRequestType())
+                    || "delete-list-node".equalsIgnoreCase(template.getRequestType())) {
+                return cpsRestClient.deleteData(anchor, xpath, template.getRequestType());
             } else {
                 final String result = cpsRestClient.fetchNode(anchor, xpath, template.getRequestType(),
                         template.getIncludeDescendants());
