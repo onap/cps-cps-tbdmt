@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "201182ab_a2aee241",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-15T11:33:00Z",
+      "side": 1,
+      "message": "In the case of deletelistNode, the success http status code is 204. \n\nPlease refer https://gerrit.onap.org/r/gitweb?p\u003dcps.git;a\u003dblob;f\u003dcps-rest/docs/openapi/cpsData.yml;h\u003dd456f44e6c3210e628cf927a929d4aad739d1e1d;hb\u003drefs/heads/master",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 194,
+        "endChar": 9
+      },
+      "revId": "501809f9be723037a65d6b91c0db28976281c591",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a117845e_42cffa47",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
         "patchSetId": 1
@@ -42,6 +65,29 @@
         "startChar": 4,
         "endLine": 200,
         "endChar": 5
+      },
+      "revId": "501809f9be723037a65d6b91c0db28976281c591",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b1e4a95_7b7757a7",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2021-09-15T11:33:00Z",
+      "side": 1,
+      "message": "If there is any exception, I think we should fail the test.",
+      "range": {
+        "startLine": 241,
+        "startChar": 10,
+        "endLine": 243,
+        "endChar": 9
       },
       "revId": "501809f9be723037a65d6b91c0db28976281c591",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
