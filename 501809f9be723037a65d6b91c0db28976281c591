@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7264ba9c_4d7e62d1",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/client/CpsRestClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-09-16T12:59:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "201182ab_a2aee241",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 194,
+        "endChar": 9
+      },
+      "revId": "501809f9be723037a65d6b91c0db28976281c591",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a117845e_42cffa47",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/client/CpsRestClientTest.java",
         "patchSetId": 1
@@ -92,6 +116,30 @@
       "revId": "501809f9be723037a65d6b91c0db28976281c591",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2042d898_95178699",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2021-09-16T12:59:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b1e4a95_7b7757a7",
+      "range": {
+        "startLine": 241,
+        "startChar": 10,
+        "endLine": 243,
+        "endChar": 9
+      },
+      "revId": "501809f9be723037a65d6b91c0db28976281c591",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
