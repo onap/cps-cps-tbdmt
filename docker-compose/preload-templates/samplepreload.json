@@ -1,0 +1,16 @@
+[
+{
+"templateId": "dummy-template-7",
+"model": "ran-network",
+"requestType": "get",
+"xpathTemplate": "/ran-network/NearRTRIC[@idNearRTRIC='{{idNearRTRIC}}']/GNBCUUPFunction[@idGNBCUUPFunction='{{idGNBCUUPFunction}}']/attributes/pLMNInfoList[@mcc='{{mcc}}' and @mnc='{{mnc}}']/sNSSAIList[@sNssai='{{sNSSAIList}}']",
+"includeDescendants": true
+},
+{
+"templateId": "dummy-template-8",
+"model": "ran-network",
+"requestType": "get",
+"xpathTemplate": "/ran-network/NearRTRIC[@idNearRTRIC='{{idNearRTRIC}}']/GNBCUUPFunction[@idGNBCUUPFunction='{{idGNBCUUPFunction}}']/attributes/RRMPolicyRatio[@id='{{id}}']/attributes/rRMPolicyMemberList[@idx='{{idx}}']",
+"includeDescendants": true
+}
+]

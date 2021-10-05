@@ -51,3 +51,11 @@ services:
       - postgres
     networks:
       - cps-tbdmt-default
+  preload-templates:
+    build: ../preload-templates
+    depends_on:
+      - cps-tbdmt
+    networks:
+      - cps-tbdmt-default
+    volumes:
+      - ../preload-templates/$FILENAME:/usr/src/app/samplepreload.json
