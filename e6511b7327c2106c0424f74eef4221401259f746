@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac7c0ea6_ba3e6a86",
+        "filename": "docker-compose/preload-templates/cpspreload.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-11T08:52:04Z",
+      "side": 1,
+      "message": "non blocking: I think seems to have lost my comment on the is cryptic variable name :-)",
+      "range": {
+        "startLine": 13,
+        "startChar": 35,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "e6511b7327c2106c0424f74eef4221401259f746",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc09dc5f_6f1665c4",
+        "filename": "docker-compose/preload-templates/cpspreload.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2021-10-11T08:52:04Z",
+      "side": 1,
+      "message": "another badly named variable?",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "e6511b7327c2106c0424f74eef4221401259f746",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
