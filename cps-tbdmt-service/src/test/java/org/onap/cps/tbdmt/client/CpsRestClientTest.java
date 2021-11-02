@@ -186,7 +186,8 @@ public class CpsRestClientTest {
             ArgumentMatchers.any(),
             ArgumentMatchers.<Class<String>>any()))
             .thenReturn(response);
-        assertEquals("Success", cpsRestClient.deleteData("coverage-area-onap", "sample", "delete-list-node"));
+        assertEquals("{\"result\":\"Success\"}",
+                          cpsRestClient.deleteData("coverage-area-onap", "sample", "delete-list-node"));
     }
 
     @Test
@@ -198,6 +199,6 @@ public class CpsRestClientTest {
             ArgumentMatchers.any(),
             ArgumentMatchers.<Class<String>>any()))
             .thenReturn(response);
-        assertEquals("Success", cpsRestClient.deleteData("coverage-area-onap", "sample", "delete"));
+        assertEquals("{\"result\":\"Success\"}", cpsRestClient.deleteData("coverage-area-onap", "sample", "delete"));
     }
 }

@@ -190,7 +190,7 @@ public class CpsRestClient {
         final int statusCode = responseEntity.getStatusCodeValue();
 
         if (statusCode == 204) {
-            return "Success";
+            return "{\"result\":\"Success\"}";
         } else {
             throw new CpsClientException(
                 String.format("Response code from CPS other than 204: %d", statusCode));
