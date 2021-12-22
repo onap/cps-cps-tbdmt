@@ -39,7 +39,7 @@ services:
       retries: 5
     networks:
       - cps-tbdmt-default
-  cps-tdmt:
+  cps-tbdmt:
     image: "cps-tbdmt:latest"
     container_name: cps-tbdmt
     hostname: cps-tbdmt
@@ -52,11 +52,12 @@ services:
     networks:
       - cps-tbdmt-default
   preload-templates:
-    build: ../preload-templates
+    image: preload:latest       
+    build: ./preload-templates
     depends_on:
       - cps-tbdmt
     networks:
       - cps-tbdmt-default
     volumes:
-      - ../preload-templates/$FILENAME:/usr/src/app/samplepreload.json
+      - "./preload-templates/$FILENAME:/usr/src/app/samplepreload.json"
 
