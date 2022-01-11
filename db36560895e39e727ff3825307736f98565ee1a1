@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ae2dfca_02a4ca46",
+        "filename": "docker-compose/preload-templates/cpspreload.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-01-11T09:19:37Z",
+      "side": 1,
+      "message": "Is this sleep necessary? It just appears to be waiting in between print statements with no obvious use. Also for each template there will be a blocking sleep of 8 seconds each. If there are many templates then this could take a very long time.",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "db36560895e39e727ff3825307736f98565ee1a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
