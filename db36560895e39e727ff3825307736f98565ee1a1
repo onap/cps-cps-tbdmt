@@ -22,6 +22,30 @@
       "revId": "db36560895e39e727ff3825307736f98565ee1a1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15a88590_dd362b7a",
+        "filename": "docker-compose/preload-templates/cpspreload.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7661
+      },
+      "writtenOn": "2022-01-11T09:38:18Z",
+      "side": 1,
+      "message": "Hi Joseph, the sleep time was meant to be utilized by the tbdmt containers to come up. The sleep time was 2 seconds before, but that was creating a connection request error, since the port wouldn\u0027t be listening by the time the request is sent. Pls do let me know if I have to change that to elsewhere.",
+      "parentUuid": "4ae2dfca_02a4ca46",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "db36560895e39e727ff3825307736f98565ee1a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
