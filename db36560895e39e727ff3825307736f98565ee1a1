@@ -46,6 +46,30 @@
       "revId": "db36560895e39e727ff3825307736f98565ee1a1",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "290e698c_c2fe3b7f",
+        "filename": "docker-compose/preload-templates/cpspreload.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7743
+      },
+      "writtenOn": "2022-01-17T10:40:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "15a88590_dd362b7a",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "db36560895e39e727ff3825307736f98565ee1a1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
