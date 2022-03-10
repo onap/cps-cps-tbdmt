@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab46f581_927d7c8c",
+        "filename": "cps-tbdmt-rest/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-03-10T16:35:29Z",
+      "side": 1,
+      "message": "non blocking: could consider setting as a property as used 3 times",
+      "range": {
+        "startLine": 72,
+        "startChar": 21,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96e140b7_9701f9ae",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-03-10T16:35:29Z",
+      "side": 1,
+      "message": "non blocking typo missing e",
+      "range": {
+        "startLine": 212,
+        "startChar": 30,
+        "endLine": 212,
+        "endChar": 32
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8088c87d_2197b9b2",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7830
+      },
+      "writtenOn": "2022-03-10T16:35:29Z",
+      "side": 1,
+      "message": "non blocking typo",
+      "range": {
+        "startLine": 258,
+        "startChar": 24,
+        "endLine": 258,
+        "endChar": 26
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
