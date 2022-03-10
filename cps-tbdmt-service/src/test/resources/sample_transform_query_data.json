@@ -50,7 +50,7 @@
                   "nRPCI":11,
                   "nRTAC":14777,
                   "nRSectorCarrierRef":[
-                     "OU=Sales"
+                     "OUSales"
                   ],
                   "userLabel":"user",
                   "sAP":[
@@ -87,7 +87,7 @@
                   "nRPCI":11,
                   "nRTAC":14777,
                   "nRSectorCarrierRef":[
-                     "OU=Sales"
+                     "OUSales"
                   ],
                   "userLabel":"user",
                   "sAP":[

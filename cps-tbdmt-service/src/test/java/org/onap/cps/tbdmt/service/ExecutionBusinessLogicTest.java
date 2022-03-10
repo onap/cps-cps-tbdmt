@@ -2,7 +2,7 @@
  * ============LICENSE_START=======================================================
  * ONAP
  * ================================================================================
- * Copyright (C) 2021 Wipro Limited.
+ * Copyright (C) 2021-2022 Wipro Limited.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,7 +196,7 @@ public class ExecutionBusinessLogicTest {
                 new Template("get-tree", "ran-network", "/test-tree", "get", true, null, transformParam1);
         final Template template2 = new Template("get-branch", "ran-network", "/test-tree/branch[@name='{{name}}']/nest",
                 "get", true, "get-tree", transformParam2);
-        final String transformedResult = "[[\"Big\"], [\"Small\"]]";
+        final String transformedResult = "[\"Big\", \"Small\"]";
 
         try {
             final String result1 = readFromFile("sample_multiple_query_data_1.json");
@@ -252,6 +252,40 @@ public class ExecutionBusinessLogicTest {
                .thenReturn(Optional.of(template));
         exception.expect(ExecuteException.class);
         executionBusinessLogic.executeTemplate("ran-net", "deleteNbr", request);
+    }
+
+    @Test
+    public void testRemovExtraBracketsIfAny() {
+        final Map<String, String> input = new HashMap<>();
+        input.put("idNearRTRIC", "11");
+        final String transformParam1 = "branch, nest, birds";
+        final Template template1 =
+                new Template("get-tree", "ran-network", "/test-tree", "get", true, null, transformParam1);
+        final String transformParam2 = "GNBDUFunction, NRCellDU, attributes, nRSectorCarrierRef";
+        final Template template2 = new Template("get-nrcelldu-data", "ran-network", "/NearRTRIC/[@idNearRTRIC='11']",
+                "get", true, null, transformParam2);
+        final String transformedResult1 = "[[\"Owl\",\"Raven\",\"Crow\"],[\"Robin\",\"Sparrow\",\"Finch\"]]";
+        final String transformedResult2 = "[\"OUSales\",\"OUSales\"]";
+
+        try {
+            final String result1 = readFromFile("sample_multiple_query_data_1.json");
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/test-tree", "get", true)).thenReturn(result1);
+            Mockito.when(templateRepository.findById(ArgumentMatchers.any())).thenReturn(Optional.of(template1));
+            final String result2 = readFromFile("sample_transform_query_data.json");
+            Mockito.when(cpsRestClient.fetchNode("ran-network", "/NearRTRIC/[@idNearRTRIC='11']", "get", true))
+                    .thenReturn(result2);
+            final TemplateKey key = new TemplateKey("get-nrcelldu-data");
+            Mockito.when(templateRepository.findById(key)).thenReturn(Optional.of(template2));
+
+            assertEquals(transformedResult1,
+                    executionBusinessLogic.executeTemplate("ran-network", "get-tree", request));
+            assertEquals(transformedResult2,
+                    executionBusinessLogic.executeTemplate("ran-network", "get-nrcelldu-data", request));
+        } catch (final CpsClientException e) {
+            e.printStackTrace();
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

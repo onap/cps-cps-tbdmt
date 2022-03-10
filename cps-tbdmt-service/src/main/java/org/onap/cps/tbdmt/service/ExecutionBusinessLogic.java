@@ -2,7 +2,7 @@
  * ============LICENSE_START=======================================================
  * ONAP
  * ================================================================================
- * Copyright (C) 2021 Wipro Limited.
+ * Copyright (C) 2021-2022 Wipro Limited.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@ public class ExecutionBusinessLogic {
                     return result;
                 } else {
                     final List<JsonElement> json = transform(template, result);
-                    return new Gson().toJson(json);
+                    return removExtraBracketsIfAny(json);
                 }
             }
         } catch (final CpsClientException e) {
@@ -206,6 +206,32 @@ public class ExecutionBusinessLogic {
             }
         }
         return output;
+
+    }
+
+    private static String removExtraBracketsIfAny(final List<JsonElement> jsonElementList) {
+
+        final Gson gson = new Gson();
+        final List<JsonElement> updatedResult = new ArrayList<>();
+        if (jsonElementList.size() == 1) {
+            return gson.toJson(jsonElementList.get(0));
+        }
+
+        if (jsonElementList.size() > 1) {
+            jsonElementList.forEach(jsonElement -> {
+                if (jsonElement.isJsonArray()) {
+                    if (jsonElement.getAsJsonArray().size() == 1) {
+                        updatedResult.add(jsonElement.getAsJsonArray().get(0));
+                    } else {
+                        updatedResult.add(jsonElement);
+                    }
+                } else {
+                    updatedResult.add(jsonElement);
+                }
+            });
+            return gson.toJson(updatedResult);
+        }
+        return gson.toJson(jsonElementList);
 
     }
 
