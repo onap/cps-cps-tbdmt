@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8a807943_d376a536",
+        "filename": "cps-tbdmt-rest/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-03-14T12:35:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ab46f581_927d7c8c",
+      "range": {
+        "startLine": 72,
+        "startChar": 21,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96e140b7_9701f9ae",
         "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92686bc1_f80ac975",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-03-14T12:35:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "96e140b7_9701f9ae",
+      "range": {
+        "startLine": 212,
+        "startChar": 30,
+        "endLine": 212,
+        "endChar": 32
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "53d3728c_e415d3b5",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-03-14T12:35:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d9b4ef6a_e7c5af63",
+      "range": {
+        "startLine": 229,
+        "startChar": 20,
+        "endLine": 229,
+        "endChar": 51
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8088c87d_2197b9b2",
         "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "51d69848_cfd8e058",
+        "filename": "cps-tbdmt-service/src/test/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogicTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-03-14T12:35:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8088c87d_2197b9b2",
+      "range": {
+        "startLine": 258,
+        "startChar": 24,
+        "endLine": 258,
+        "endChar": 26
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9881fda_ae1826c2",
         "filename": "cps-tbdmt-service/src/test/resources/sample_transform_query_data.json",
         "patchSetId": 3
@@ -105,6 +201,30 @@
       "writtenOn": "2022-03-10T17:04:17Z",
       "side": 1,
       "message": "why did this change, it seems unrelated ?!",
+      "range": {
+        "startLine": 53,
+        "startChar": 22,
+        "endLine": 53,
+        "endChar": 29
+      },
+      "revId": "8645dbb9bd6cacc5f8489e07b16c06db664c4519",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "158002e6_8e9a606b",
+        "filename": "cps-tbdmt-service/src/test/resources/sample_transform_query_data.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-03-14T12:35:17Z",
+      "side": 1,
+      "message": "GSON was converting \u0027\u003d\u0027 to Unicode \u0027\\u003d\u0027. Since its just a sample data removing this for now.",
+      "parentUuid": "c9881fda_ae1826c2",
       "range": {
         "startLine": 53,
         "startChar": 22,
