@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ffd8c9f_61fc264e",
+        "filename": "cps-tbdmt-service/src/main/java/org/onap/cps/tbdmt/service/ExecutionBusinessLogic.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T12:46:11Z",
+      "side": 1,
+      "message": "Non-Blocking: no need for else because of return statement on line #218\n\n(please not our recent code review checklist: https://wiki.onap.org/display/DW/CPS+Code+Review+Check+List it has an entry for this common issue)",
+      "range": {
+        "startLine": 219,
+        "startChar": 14,
+        "endLine": 219,
+        "endChar": 20
+      },
+      "revId": "50a9560efde8602fca4f31b602c1486408d1946d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4521e806_728bdf83",
+        "filename": "cps-tbdmt-service/src/test/resources/sample_transform_query_data.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-03-14T12:46:11Z",
+      "side": 1,
+      "message": "not removed (yet)?, see comment and reply on commit #3",
+      "range": {
+        "startLine": 53,
+        "startChar": 21,
+        "endLine": 53,
+        "endChar": 30
+      },
+      "revId": "50a9560efde8602fca4f31b602c1486408d1946d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
