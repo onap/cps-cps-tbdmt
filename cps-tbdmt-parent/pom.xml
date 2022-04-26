@@ -16,6 +16,12 @@
     <packaging>pom</packaging>
 
     <properties>
+        <app>org.onap.cps.tbdmt.Application</app>
+        <docker.repository.pull>nexus3.onap.org:10001/</docker.repository.pull>
+        <docker.repository.push>nexus3.onap.org:10003/</docker.repository.push>
+        <image.base>${docker.repository.pull}onap/integration-java11:8.0.0</image.base>
+        <image.name>${docker.repository.push}onap/cps-tbdmt</image.name>
+        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
         <cps.version>1.0.0</cps.version>
         <java.version>11</java.version>
         <minimum-coverage>0.9</minimum-coverage>
@@ -327,6 +333,42 @@
                                 <fileInclude>**/code-coverage/jacoco-ut.exec</fileInclude>
                             </dataFileIncludes>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <container>
+                        <mainClass>${app}</mainClass>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
+                    <from>
+                        <image>${image.base}</image>
+                    </from>
+                    <to>
+                        <tags>
+                            <tag>latest</tag>
+                        </tags>
+                        <image>${image.name}:${project.version}-${maven.build.timestamp}</image>
+                    </to>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <id>build</id>
+                        <goals>
+                            <goal>dockerBuild</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <phase>deploy</phase>
+                        <id>buildAndPush</id>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
