@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cdbd3805_729f765a",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-05-03T13:13:12Z",
+      "side": 1,
+      "message": "I dont see a profile named docker in this repo",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 26
+      },
+      "revId": "439e0cb5fde699ed16b1e02053c592d8b17ea835",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddb0ed26_99393d7e",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-05-03T13:13:12Z",
+      "side": 1,
+      "message": "please specify the path to docker-compose file.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 108
+      },
+      "revId": "439e0cb5fde699ed16b1e02053c592d8b17ea835",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
