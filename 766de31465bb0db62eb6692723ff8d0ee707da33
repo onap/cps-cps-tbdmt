@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76bb9fc5_e69b596a",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-05-04T09:13:50Z",
+      "side": 1,
+      "message": "maven commands are executed inside the project. this is not needed",
+      "range": {
+        "startLine": 45,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 11
+      },
+      "revId": "766de31465bb0db62eb6692723ff8d0ee707da33",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
