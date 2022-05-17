@@ -1,0 +1,8 @@
+distribution_type: container
+container_release_tag: 0.0.1
+project: cps/cps-tbdmt
+log_dir: cps-cps-tbdmt-maven-docker-stage-master/449/
+ref: 766de31465bb0db62eb6692723ff8d0ee707da33
+containers:
+  - name: 'cps-tbdmt'
+    version: '0.0.1-20220517T065556Z'
