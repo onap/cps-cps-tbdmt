@@ -1,0 +1,4 @@
+distribution_type: maven
+log_dir: cps-cps-tbdmt-maven-docker-stage-master/449/
+project: cps-tbdmt
+version: 0.0.1
