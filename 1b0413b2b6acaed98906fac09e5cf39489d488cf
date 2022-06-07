@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b70dc6f_456d1bf2",
+        "filename": "releases/0.0.1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2022-06-07T13:05:24Z",
+      "side": 1,
+      "message": "where is this taken from ?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 46
+      },
+      "revId": "1b0413b2b6acaed98906fac09e5cf39489d488cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
