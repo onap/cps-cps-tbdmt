@@ -22,6 +22,30 @@
       "revId": "1b0413b2b6acaed98906fac09e5cf39489d488cf",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab750abe_f54adecd",
+        "filename": "releases/0.0.1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6219
+      },
+      "writtenOn": "2022-06-07T14:42:24Z",
+      "side": 1,
+      "message": "I followed the format in https://gerrit.onap.org/r/gitweb?p\u003dcps.git;a\u003dblob;f\u003dreleases/3.0.0.yaml;h\u003d60dd8116d08b836f4d9852965cfbc851519839d0;hb\u003dHEAD\n\nJOB Number is taken from the below jenkins job\nhttps://jenkins.onap.org/job/cps-cps-tbdmt-maven-stage-master/467/",
+      "parentUuid": "2b70dc6f_456d1bf2",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 46
+      },
+      "revId": "1b0413b2b6acaed98906fac09e5cf39489d488cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
