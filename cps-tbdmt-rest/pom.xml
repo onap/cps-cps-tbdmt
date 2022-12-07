@@ -30,7 +30,7 @@
     <artifactId>cps-tbdmt-rest</artifactId>
 
     <properties>
-        <jetty.version>11.0.7</jetty.version>
+        <jetty.version>11.0.12</jetty.version>
     </properties>
 
     <dependencies>
