@@ -69,6 +69,30 @@
       "revId": "a96b7c4fdc31011e00cb6c1489ab5d465d1da6da",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0476338_7a19918a",
+        "filename": "cps-tbdmt-rest/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-08T15:09:31Z",
+      "side": 1,
+      "message": "always better to upgrade the main package or even parents of those as we did spring too\nthe tools will point out specific (sub-package were the vulnerability is)",
+      "parentUuid": "ea1e6ce8_85a8dd1a",
+      "range": {
+        "startLine": 33,
+        "startChar": 23,
+        "endLine": 34,
+        "endChar": 33
+      },
+      "revId": "a96b7c4fdc31011e00cb6c1489ab5d465d1da6da",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
