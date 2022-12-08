@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "edb55b86_4d385f3c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-08T13:44:44Z",
+      "side": 1,
+      "message": "NB: this is NOT the standard commit message format, see https://wiki.onap.org/display/DW/Commit+Messages",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "a96b7c4fdc31011e00cb6c1489ab5d465d1da6da",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40538f0a_85a7ac19",
+        "filename": "cps-tbdmt-rest/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2022-12-08T13:44:44Z",
+      "side": 1,
+      "message": "can you not just upgrade the whole of Jetty too 11.0.12 ?!",
+      "range": {
+        "startLine": 33,
+        "startChar": 23,
+        "endLine": 34,
+        "endChar": 33
+      },
+      "revId": "a96b7c4fdc31011e00cb6c1489ab5d465d1da6da",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
