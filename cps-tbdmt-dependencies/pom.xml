@@ -35,7 +35,7 @@
         <lombok.version>1.18.16</lombok.version>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
         <openpojo.version>0.8.13</openpojo.version>
-        <postgresql.version>42.5.0</postgresql.version>
+        <postgresql.version>42.5.1</postgresql.version>
         <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
         <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
         <sonar.skip>true</sonar.skip>
