@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Toine Siebelink <toine.siebelink@est.tech>
+Verified+1: ONAP Required GHA <releng+onap.required.gha@linuxfoundation.org>
+Code-Review+1: Daniel Hanrahan <daniel.hanrahan@est.tech>
+Submitted-by: Matthew Watkins <mwatkins@linuxfoundation.org>
+Submitted-at: Wed, 16 Aug 2023 11:58:27 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/cps/cps-tbdmt/+/135580
+Project: cps/cps-tbdmt
+Branch: refs/heads/master
