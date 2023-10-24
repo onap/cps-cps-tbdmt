@@ -20,8 +20,8 @@
 
 package org.onap.cps.tbdmt.rest;
 
+import jakarta.validation.Valid;
 import java.util.Collection;
-import javax.validation.Valid;
 import org.onap.cps.tbdmt.exception.TemplateNotFoundException;
 import org.onap.cps.tbdmt.model.Template;
 import org.onap.cps.tbdmt.model.TemplateKey;
