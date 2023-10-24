@@ -20,7 +20,7 @@
 
 package org.onap.cps.tbdmt.rest;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.onap.cps.tbdmt.model.ExecutionRequest;
 import org.onap.cps.tbdmt.service.ExecutionBusinessLogic;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +47,8 @@ public class ExecutionController {
      */
     @PostMapping(path = "/execute/{model}/{templateId}")
     public ResponseEntity<String> executeTemplate(@Valid @PathVariable final String model,
-        @Valid @PathVariable final String templateId,
-        @Valid @RequestBody final ExecutionRequest executionRequest) {
+                                                  @Valid @PathVariable final String templateId,
+                                                  @Valid @RequestBody final ExecutionRequest executionRequest) {
         final String result = executionBusinessLogic.executeTemplate(model, templateId, executionRequest);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

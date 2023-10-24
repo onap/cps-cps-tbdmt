@@ -29,12 +29,12 @@
     <description>This artifact contains dependencyManagement declarations of upstream versions.</description>
 
     <properties>
-        <cps.version>1.0.0</cps.version>
-        <hibernate-jpa-api.version>1.0.1.Final</hibernate-jpa-api.version>
-        <jinjava.version>2.5.6</jinjava.version>
-        <lombok.version>1.18.16</lombok.version>
+        <cps.version>3.3.5</cps.version>
+        <hibernate-jpa-api.version>1.0.2.Final</hibernate-jpa-api.version>
+        <jinjava.version>2.7.1</jinjava.version>
+        <lombok.version>1.18.24</lombok.version>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
-        <openpojo.version>0.8.13</openpojo.version>
+        <openpojo.version>0.9.1</openpojo.version>
         <postgresql.version>42.5.1</postgresql.version>
         <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
         <snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
@@ -56,6 +56,20 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.1.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2022.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.onap.cps</groupId>
                 <artifactId>cps-dependencies</artifactId>
@@ -81,6 +95,11 @@
                 <version>2.8.9</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>5.2.1</version>
+            </dependency>
+            <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
@@ -99,40 +118,12 @@
                 <groupId>com.hubspot.jinjava</groupId>
                 <artifactId>jinjava</artifactId>
                 <version>${jinjava.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.core</groupId>
-                        <artifactId>jackson-annotations</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.core</groupId>
-                        <artifactId>jackson-databind</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.core</groupId>
-                        <artifactId>jackson-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.dataformat</groupId>
-                        <artifactId>jackson-dataformat-yaml</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.openpojo</groupId>
                 <artifactId>openpojo</artifactId>
                 <version>${openpojo.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>2.16.0</version>
-            </dependency>
-             <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-to-slf4j</artifactId>
-                <version>2.16.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

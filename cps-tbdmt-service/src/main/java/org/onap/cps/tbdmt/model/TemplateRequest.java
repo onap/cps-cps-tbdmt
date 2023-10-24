@@ -20,8 +20,8 @@
 
 package org.onap.cps.tbdmt.model;
 
+import jakarta.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
