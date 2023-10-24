@@ -68,7 +68,6 @@ public class TemplateExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(ErrorResponse, HttpStatus.OK);
     }
 
-    @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
         final MethodArgumentNotValidException methodArgumentNotValidException, final HttpHeaders httpHeaders,
         final HttpStatus httpStatus, final WebRequest webRequest) {
