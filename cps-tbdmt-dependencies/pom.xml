@@ -32,7 +32,7 @@
         <cps.version>1.0.0</cps.version>
         <hibernate-jpa-api.version>1.0.1.Final</hibernate-jpa-api.version>
         <jinjava.version>2.5.6</jinjava.version>
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
         <openpojo.version>0.8.13</openpojo.version>
         <postgresql.version>42.5.1</postgresql.version>
@@ -56,6 +56,20 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.1.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2022.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.onap.cps</groupId>
                 <artifactId>cps-dependencies</artifactId>
