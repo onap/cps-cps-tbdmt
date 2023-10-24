@@ -19,17 +19,17 @@
         <app>org.onap.cps.tbdmt.Application</app>
         <docker.repository.pull>nexus3.onap.org:10001/</docker.repository.pull>
         <docker.repository.push>nexus3.onap.org:10003/</docker.repository.push>
-        <image.base>${docker.repository.pull}onap/integration-java11:8.0.0</image.base>
+        <image.base>${docker.repository.pull}onap/integration-java17:12.0.0</image.base>
         <image.name>${docker.repository.push}onap/cps-tbdmt</image.name>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
-        <cps.version>1.0.0</cps.version>
-        <java.version>11</java.version>
-        <minimum-coverage>0.9</minimum-coverage>
+        <cps.version>3.3.5</cps.version>
+        <java.version>17</java.version>
+        <minimum-coverage>0.90</minimum-coverage>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
         <oparent.version>3.2.0</oparent.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
-        <spotbugs-maven-plugin.version>4.1.3</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.4.2</spotbugs-maven-plugin.version>
         <spring-boot-maven-plugin.version>2.3.3.RELEASE</spring-boot-maven-plugin.version>
         <spotbugs.slf4j.version>1.8.0-beta4</spotbugs.slf4j.version>
         <spotbugs.bug-pattern.version>1.5.0</spotbugs.bug-pattern.version>
@@ -76,7 +76,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 
     <build>
         <resources>
@@ -270,6 +269,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>${surefireArgLine}</argLine>
@@ -294,6 +294,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
@@ -322,24 +323,12 @@
                             </rules>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>report</id>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                        <phase>verify</phase>
-                        <configuration>
-                            <dataFileIncludes>
-                                <fileInclude>**/code-coverage/jacoco-ut.exec</fileInclude>
-                            </dataFileIncludes>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.3.2</version>
                 <configuration>
                     <container>
                         <mainClass>${app}</mainClass>
@@ -379,6 +368,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
             </plugin>
         </plugins>
     </build>
