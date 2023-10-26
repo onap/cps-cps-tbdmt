@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66ec4f48_9122c3d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6639
+      },
+      "writtenOn": "2023-10-26T08:28:48Z",
+      "side": 1,
+      "message": "do NOT merge. need to re-apply changes via Nordix!",
+      "revId": "3e6cdba06c9fdab09d892fb281ef7666e791e87f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    }
+  ]
+}
