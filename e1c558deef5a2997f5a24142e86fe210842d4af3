@@ -16,6 +16,24 @@
       "message": "Do we need to upgrade it in cps-parent since it is now 42.5.1\n\nI did\u0027t know that we still using/updating cps-tbdmt module? if so, where does it being accomodated readlly just want to know.\n\nThanks",
       "revId": "e1c558deef5a2997f5a24142e86fe210842d4af3",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b07fbfff_49f2f306",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7965
+      },
+      "writtenOn": "2024-09-09T10:50:56Z",
+      "side": 1,
+      "message": "This is a one-off patch as the vulnerability scan has picked this up.\nWe are in parallel exploring to decide the fate of this repo as it is not actively developed or maintained.",
+      "parentUuid": "232db477_472e31c5",
+      "revId": "e1c558deef5a2997f5a24142e86fe210842d4af3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a"
     }
   ]
 }
